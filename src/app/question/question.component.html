@@ -27,6 +27,7 @@
   </div>
   <md-card-actions>
     <button md-button class="navigation navigation-left" [routerLink]="['/thema', topicId, 'frage', questionId-1]" [disabled]="questionId == 0"><md-icon>chevron_left</md-icon>Zurück</button>
-    <button md-button class="navigation navigation-right" [routerLink]="['/thema', topicId, 'frage', questionId+1]" [disabled]="answer == undefined">Weiter<md-icon>chevron_right</md-icon></button>
+    <button md-button class="navigation navigation-right" [routerLink]="['/thema', topicId, 'frage', questionId+1]" *ngIf="topic.questions.length != questionId+1" [disabled]="answer == undefined">Weiter<md-icon>chevron_right</md-icon></button>
+    <button md-button class="navigation navigation-right" [routerLink]="['/thema', topicId, 'auswertung']" *ngIf="topic.questions.length == questionId+1">Auswertung<md-icon>chevron_right</md-icon></button>
   </md-card-actions>
 </md-card>

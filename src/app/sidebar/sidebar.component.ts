@@ -20,6 +20,5 @@ export class SidebarComponent implements OnInit {
 
   loadData() {
     this.topicId = parseInt(this.route.snapshot.params['topic'], 10);
-    console.log(this.router.routerState.root.queryParams);
   }
 }

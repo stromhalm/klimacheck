@@ -8,10 +8,12 @@ import { LocalStorageService, LOCAL_STORAGE_SERVICE_CONFIG } from 'angular-2-loc
 import { CheckStorageService } from './check-storage.service';
 import { LayoutComponent } from './layout.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { ContentComponent } from './content/content.component';
+import { QuestionComponent } from './question/question.component';
+import { ScoreComponent } from './score/score.component';
 
 const appRoutes: Routes = [
-  { path: 'thema/:topic/frage/:question', component: ContentComponent },
+  { path: 'thema/:topic/frage/:question', component: QuestionComponent },
+  { path: 'thema/:topic/auswertung', component: ScoreComponent },
   { path: 'thema/:topic', redirectTo: '/thema/:topic/frage/0' },
   { path: '', redirectTo: '/thema/0/frage/0', pathMatch: 'full' },
   { path: '**', redirectTo: '' }
@@ -28,7 +30,8 @@ let localStorageServiceConfig = {
   declarations: [
     LayoutComponent,
     SidebarComponent,
-    ContentComponent
+    QuestionComponent,
+    ScoreComponent
   ],
   imports: [
     BrowserModule,

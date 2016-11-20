@@ -1,17 +1,11 @@
-import { Component, OnInit, trigger,
-  state,
-  style,
-  transition,
-  keyframes,
-  animate} from '@angular/core';
+import { Component, OnInit, trigger, state, style, transition, keyframes, animate} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ClimateCheck } from '../climate-check';
 import { CheckStorageService } from '../check-storage.service';
 
 @Component({
-  selector: 'app-content',
-  templateUrl: './content.component.html',
-  styleUrls: ['./content.component.less'],
+  templateUrl: './question.component.html',
+  styleUrls: ['./question.component.less'],
   animations: [
     trigger('questionId', [
       state('*', style({height: '*'})),
@@ -37,7 +31,7 @@ import { CheckStorageService } from '../check-storage.service';
     ])
   ]
 })
-export class ContentComponent implements OnInit {
+export class QuestionComponent implements OnInit {
 
   topicId: number;
   questionId: number;

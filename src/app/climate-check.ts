@@ -58,6 +58,25 @@ export class ClimateCheck {
                         true: 'Gebäude sind im Energiesektor ein „schlafender Riese“: Ihr Anteil am Energieverbrauch in Deutschland beträgt ca. 40 % - damit sind sie die größten Energieschlucker. Das müsste nicht so sein: Über 80 Prozent der Heizungen sowie der Gebäudetechnik in Deutschland sind nicht auf dem Stand der Technik. Wie wäre es mit einem Energiecheck für euer Gebäude?  Bei diesem Angebot der Verbraucherzentrale erfahrt ihr individuell, wie ihr Energie und bares Geld sparen könnt und gleichzeitig das Klima schützt: Ein Energieberater macht eine Bestandsaufnahme, beurteilt euren Strom- und Heizenergieverbrauch und identifiziert wichtige Stellschrauben für Einsparungen. Zusätzlich werden die Gebäudehülle (Außenwände, Fenster, Türen, Dach) sowie die Heizungsanlage (Wärmeerzeuger und Verteilsystem) unter energetischen Aspekten begutachtet. Dabei wird auch geprüft, ob prinzipiell der Einsatz erneuerbarer Energien möglich und sinnvoll ist. Als Ergebnis erhaltet ihr einen Kurzbericht mit Handlungsempfehlungen. Dank der Förderung der Bundesregierung kostet der Check nur 20 €, die euch die Klima-Challenge erstatten kann. https://www.verbraucherzentrale-energieberatung.de/energiechecks_gebaeudecheck.php',
                         false: 'Gebäude sind im Energiesektor ein „schlafender Riese“: Ihr Anteil am Energieverbrauch in Deutschland beträgt ca. 40 % - damit sind sie die größten Energieschlucker. Das müsste nicht so sein: Über 80 Prozent der Heizungen sowie der Gebäudetechnik in Deutschland sind nicht auf dem Stand der Technik. Wie wäre es mit einem Energiecheck für euer Gebäude?  Bei diesem Angebot der Verbraucherzentrale erfahrt ihr individuell, wie ihr Energie und bares Geld sparen könnt und gleichzeitig das Klima schützt: Ein Energieberater macht eine Bestandsaufnahme, beurteilt euren Strom- und Heizenergieverbrauch und identifiziert wichtige Stellschrauben für Einsparungen. Zusätzlich werden die Gebäudehülle (Außenwände, Fenster, Türen, Dach) sowie die Heizungsanlage (Wärmeerzeuger und Verteilsystem) unter energetischen Aspekten begutachtet. Dabei wird auch geprüft, ob prinzipiell der Einsatz erneuerbarer Energien möglich und sinnvoll ist. Als Ergebnis erhaltet ihr einen Kurzbericht mit Handlungsempfehlungen. Dank der Förderung der Bundesregierung kostet der Check nur 20 €, die euch die Klima-Challenge erstatten kann. https://www.verbraucherzentrale-energieberatung.de/energiechecks_gebaeudecheck.php'
                     }
+                ],
+                scores: [
+                    {
+                        minPoints: 14,
+                        text: 'Ihr seid helle Köpfe und verhaltet euch schon sehr klimafreundlich im Bereich Energie! Damit seid ihr echte Vorbilder. Erzählt auch anderen von eurem Verhalten.'
+                    },
+                    {
+                        minPoints: 11,
+                        text: 'Toll! In euren Geschäftsstellen/Bildungsstätten wird auf Energie geachtet, wodurch ihr bereits eine recht gute Energiebilanz vorweisen könnt! Es kann sein, dass ihr über manche Dinge im Bereich Energie nicht direkt entscheiden könnt, z.B. bei der Dämmung oder beim Heizen. Dennoch gibt es Einflussmöglichkeiten: Du könntest z.B. den Entscheidungsträger_innen diesen Klima-Check zeigen und (erste) Diskussionen anregen.'
+                    },
+                    {
+                        minPoints: 7,
+                        text: 'Ihr seid auf dem richtigen Weg. Mit den folgenden Tipps könnt ihr noch eins draufsetzen und im Klimaschutz ganz vorn dabei sein! Es kann sein, dass ihr über manche Dinge im Bereich Energie nicht direkt entscheiden könnt, z.B. bei der Dämmung oder beim Heizen. Dennoch gibt es Einflussmöglichkeiten: Du könntest z.B. den Entscheidungsträger_innen diesen Klima-Check zeigen und (erste) Diskussionen anregen.'
+                    },
+                    {
+                        minPoints: 0,
+                        text: 'In Sachen Energiesparen schneidet eurer Verband noch nicht so gut ab. Keine Sorge, das könnt ihr schnell ändern und schon mit einfachen Maßnahmen kinderleicht das Klima entlasten. Nur Mut, Veränderungen gehen leichter als gedacht. Es kann sein, dass ihr über manche Dinge im Bereich Energie nicht direkt entscheiden könnt, z.B. bei der Dämmung oder beim Heizen. Dennoch gibt es Einflussmöglichkeiten: Du könntest z.B. den Entscheidungsträger_innen diesen Klima-Check zeigen und (erste) Diskussionen anregen.'
+                    }
+
                 ]
 
             },
@@ -155,6 +174,28 @@ export class ClimateCheck {
                         question: 'Vermeidet ihr bewusst Give-Aways (z.B. für Stände) oder reduziert sie zugunsten nützlicher, nachhaltiger Gebrauchsgegenstände?',
                         false: 'Falls ihr auf Give-aways nicht verzichten wollt, nutzt doch nachhaltige Gebrauchsgegenstände?! Tipps gibt’s hier: http://oeko-werbeartikel.eu/'
                     }
+                ],
+                scores: [
+                    {
+                        minPoints: 26,
+                        text: 'Herzlichen Glückwunsch! Ihr geht bewusst mit den technischen Geräten in eurem Büro/eurer Geschäftsstelle um und verhaltet euch sehr klimafreundlich! Weiter so! Erzählt auch anderen von eurem Verhalten.'
+                    },
+                    {
+                        minPoints: 20,
+                        text: 'Toll! In euren Geschäftsstellen/Bildungsstätten achtet ihr schon auf Energieverbrauch und handelt in vielen Punkten klimafreundlich! Wie ihr in Zukunft noch eins draufsetzen könnt, erfahrt ihr hier:'
+                    },
+                    {
+                        minPoints: 16,
+                        text: 'Im Büroalltag macht ihr euch bereits Gedanken über umweltfreundliches Verhalten und seid auf einem guten Weg. Der Klima-Challenge gefällt das! Wir haben ein paar Tipps für euch, wie ihr das weiter ausbauen könnt, damit euer Verband noch klimafreundlicher – und damit zum echten Vorreiter – wird:'
+                    },
+                    {
+                        minPoints: 8,
+                        text: 'Im Büroalltag agiert ihr in einigen Punkten schon sehr klimabewusst - ihr seid auf dem richtigen Weg! Mit den folgenden Tipps könnt ihr noch eins draufsetzen und im Klimaschutz ganz vorn dabei sein!'
+                    },
+                    {
+                        minPoints: 0,
+                        text: 'In Sachen klimafreundliches Verhalten im Büro schneidet eurer Verband noch nicht so gut ab, wodurch das Klima mehr als notwendig belastet wird. Keine Sorge, das könnt ihr schnell ändern und schon mit einfachen Maßnahmen kinderleicht das Klima entlasten.'
+                    }
                 ]
             },
             {
@@ -239,6 +280,24 @@ export class ClimateCheck {
                         true: 'Wenn ihr mal etwas transportieren müsst: Leiht euch doch ein Lastenrad aus! Macht Spaß, hält fit und schont das Klima. Hier bieten Privatpersonen (kostenlos oder gegen kleinen Preis) ihre Räder zum Leihen an: http://www.velogistics.net/de/ Oder ihr bestellt einen Radkurier! Z.B. hier für Hannover: http://www.tretwerk-fahrradkurier.de/',
                         false: 'Wenn ihr mal etwas transportieren müsst: Leiht euch doch ein Lastenrad aus! Macht Spaß, hält fit und schont das Klima. Hier bieten Privatpersonen (kostenlos oder gegen kleinen Preis) ihre Räder zum Leihen an: http://www.velogistics.net/de/ Oder ihr bestellt einen Radkurier! Z.B. hier für Hannover: http://www.tretwerk-fahrradkurier.de/'
                     }
+                ],
+                scores: [
+                    {
+                        minPoints: 20,
+                        text: 'Gratulation! Euer Veranstaltungen sind sehr klimafreundlich! Macht weiter so und erzählt auch gerne anderen Verbänden davon! So werdet ihr zum Vorbild und stoßt auch außerhalb eures Verbandes Veränderungen an!'
+                    },
+                    {
+                        minPoints: 13,
+                        text: 'Super! Viele Aspekte eurer Veranstaltungen sind bereits klimafreundlich. Weiter so! Wie ihr noch andere Bereiche klimafreundlicher gestalten könnt, erfahrt ihr hier.'
+                    },
+                    {
+                        minPoints: 7,
+                        text: 'Im Bereich "Veranstaltungen" schneidet eurer Verband noch nicht so gut ab. Keine Sorge, das könnt ihr schnell ändern und schon mit einfachen Maßnahmen kinderleicht das Klima entlasten.'
+                    },
+                    {
+                        minPoints: 0,
+                        text: 'Noch sind eure Veranstaltungen nicht so klimafreundlich. Nur Mut, es gibt bereits einfache Maßnahmen mit großer Wirkung.'
+                    }
                 ]
             },
             {
@@ -270,6 +329,12 @@ export class ClimateCheck {
                         true: 'Toll, dass auch ihr bei der Klima-Challenge dabei seid und somit gemeinsam mit anderen jungen Menschen ein Zeichen für mehr Klimaschutz setzt! Weiter so!',
                         false: 'Bei der Klima-Challenge mitzumachen ist ganz einfach: klimafreundliche Aktion ausdenken oder buchen, durchführen, auf der Website eintragen (klima-challenge.de) und Klima-Punkte sammeln. Dabei könnt ihr tolle Preise gewinnen und tragt dazu bei, dass der niedersächsische Umweltminister seinen nächsten Einsatz einlösen muss, z.B. mit Jugendlichen eine „Schnippeldisko“ durchführen oder beim Poetry Slam für das Klima slammen.'
                     },
+                ],
+                scores: [
+                    {
+                        minPoints: 0,
+                        text: 'Ihr seid an unseren Angeboten interessiert oder habt noch Fragen? Dann wendet euch gerne an anna-maria@janun.de! Denkt dran: Wenn euch dieser Klima-Check dazu angeregt hat, klimafreundliche Veränderungen durchzuführen, tragt sie doch gleich ins Punktesystem ein, sammelt dafür Klimapunkte und sichert eure Chance auf tolle Preise! :) http://klimachallenge.de/mitmachen'
+                    }
                 ]
             }
         ];
