@@ -26,7 +26,7 @@
     "ts-helpers": "^1.1.1",
     "web-animations-js": "^2.2.2",
     "zone.js": "^0.6.23",
-    "angular2-local-storage": "^0.2.0"
+    "angular-2-local-storage": "^0.0.23"
   },
   "devDependencies": {
     "@types/jasmine": "^2.2.30",
