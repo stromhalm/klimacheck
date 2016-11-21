@@ -2,7 +2,7 @@ dist: "trusty"
 sudo: "required"
 language: "node_js"
 node_js: "6"
-os: "linux"
+os: "osx"
 install:
  - npm install -g firebase-tools
  - npm install -g angular-cli
