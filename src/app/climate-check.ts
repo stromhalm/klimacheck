@@ -3,7 +3,7 @@ export class ClimateCheck {
     public static get topics(): Object {
         return [
             {
-                menuName: 'Energie',
+                menuName: 'Energie & Gebäude',
                 fullName: 'Energie in Geschäfts-/ Bildungsstätten',
                 icon: 'lightbulb_outline',
                 questions: [
