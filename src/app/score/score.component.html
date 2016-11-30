@@ -1,24 +1,28 @@
-<md-card>
-  <md-card-subtitle>Auswertung</md-card-subtitle>
-  <md-card-title>{{topic.fullName}}</md-card-title>
-  <md-card-content>
-    <div class="percentage">
-      {{percentage}} %
-    </div>
-    <md-progress-bar mode="determinate" value="{{percentage}}"></md-progress-bar>
-  </md-card-content>
-  <div class="answer-block">
-    <div class="answer-score">
-      <div class="paragraph-icon">
-        <button md-mini-fab class="button-info" disabled><md-icon>perm_scan_wifi</md-icon></button>
+<div class="vertical-align">
+  <div class="horizontal-align">
+    <md-card>
+      <md-card-subtitle>Auswertung</md-card-subtitle>
+      <md-card-title>{{topic.fullName}}</md-card-title>
+      <md-card-content>
+        <div class="percentage">
+          {{percentage}} %
+        </div>
+        <md-progress-bar mode="determinate" value="{{percentage}}"></md-progress-bar>
+      </md-card-content>
+      <div class="answer-block">
+        <div class="answer-score">
+          <div class="paragraph-icon">
+            <button md-mini-fab class="button-info" disabled><md-icon>perm_scan_wifi</md-icon></button>
+          </div>
+          <div class="score-text">
+            {{ scoreText }}
+          </div>
+        </div>
       </div>
-      <div class="score-text">
-        {{ scoreText }}
-      </div>
-    </div>
+      <md-card-actions>
+        <button md-button class="navigation navigation-left" [routerLink]="['/thema', topicId, 'frage', topic.questions.length-1]"><md-icon>chevron_left</md-icon>Zurück</button>
+        <button md-button class="navigation navigation-right" [routerLink]="['/thema', topicId+1]" [disabled]="answer == undefined">Weiter<md-icon>{{topic.icon}}</md-icon></button>
+      </md-card-actions>
+    </md-card>
   </div>
-  <md-card-actions>
-    <button md-button class="navigation navigation-left" [routerLink]="['/thema', topicId, 'frage', topic.questions.length-1]"><md-icon>chevron_left</md-icon>Zurück</button>
-    <button md-button class="navigation navigation-right" [routerLink]="['/thema', topicId+1]" [disabled]="answer == undefined">Weiter<md-icon>{{topic.icon}}</md-icon></button>
-  </md-card-actions>
-</md-card>
+</div>

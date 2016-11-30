@@ -6,13 +6,17 @@ import { Routes, RouterModule } from '@angular/router';
 import { LocalStorageService, LOCAL_STORAGE_SERVICE_CONFIG } from 'angular-2-local-storage';
 
 import { CheckStorageService } from './check-storage.service';
+import { ColorThemeService } from './color-theme.service';
 import { LayoutComponent } from './layout.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { QuestionComponent } from './question/question.component';
 import { ScoreComponent } from './score/score.component';
+import { RedirectComponent } from './redirect/redirect.component';
 
 const appRoutes: Routes = [
   { path: 'thema/:topic/frage/:question', component: QuestionComponent },
+  { path: 'animate/thema/:topic/frage/:question', component: RedirectComponent },
+  { path: 'animate/thema/:topic/auswertung', component: RedirectComponent },
   { path: 'thema/:topic/auswertung', component: ScoreComponent },
   { path: 'thema/:topic', redirectTo: '/thema/:topic/frage/0' },
   { path: '', redirectTo: '/thema/0/frage/0', pathMatch: 'full' },
@@ -31,7 +35,8 @@ let localStorageServiceConfig = {
     LayoutComponent,
     SidebarComponent,
     QuestionComponent,
-    ScoreComponent
+    ScoreComponent,
+    RedirectComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +47,7 @@ let localStorageServiceConfig = {
   providers: [
     LocalStorageService,
     CheckStorageService,
+    ColorThemeService,
     {
       provide: LOCAL_STORAGE_SERVICE_CONFIG, useValue: localStorageServiceConfig
     }

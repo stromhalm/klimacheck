@@ -1,0 +1,51 @@
+:host {
+  height: 100%;
+  width: 100%;
+  display: table;
+  position: absolute;
+}
+:host .vertical-align {
+  display: table-cell;
+  vertical-align: middle;
+}
+:host .horizontal-align {
+  max-width: 800px;
+  margin: 0 auto;
+}
+md-card {
+  max-width: 800px;
+  margin: 0 auto;
+}
+md-card .answer-buttons {
+  text-align: center;
+}
+md-card .answer-buttons button {
+  margin: 15px;
+  transition: transform ease-in-out 0.15s;
+}
+md-card .answer-buttons button.active {
+  transform: scale(1.1);
+}
+md-card .answer-buttons button.inactive {
+  transform: scale(0.9);
+}
+md-card .button-yes {
+  background-color: #8BC34A;
+  color: white;
+}
+md-card .button-no {
+  background-color: #FF5722;
+  color: white;
+}
+md-card .question-feedback {
+  padding-left: 60px;
+}
+md-card md-card-actions {
+  clear: both;
+}
+md-card md-card-actions .navigation {
+  margin-top: 20px;
+}
+md-card md-card-actions .navigation.navigation-right {
+  float: right;
+}

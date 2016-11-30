@@ -1,33 +1,37 @@
-<md-card [@questionId]="questionId">
-  <md-card-subtitle>{{question.category}}</md-card-subtitle>
-  <md-card-title>{{question.question}}</md-card-title>
-  <div class="answer-buttons">
-    <md-card-content>
-      <button md-raised-button class="button-yes" [ngClass]="{'active': answer === true, 'inactive': answer === false}" (click)="clickYes()"><md-icon>check</md-icon>Ja</button>
-      <button md-raised-button class="button-no" [ngClass]="{'active': answer === false, 'inactive': answer === true}" (click)="clickNo()"><md-icon>clear</md-icon>Nein</button>
-    </md-card-content>
+<div class="vertical-align">
+  <div class="horizontal-align">
+    <md-card>
+      <md-card-subtitle>{{question.category}}</md-card-subtitle>
+      <md-card-title>{{question.question}}</md-card-title>
+      <div class="answer-buttons">
+        <md-card-content>
+          <button md-raised-button class="button-yes" [ngClass]="{'active': answer === true, 'inactive': answer === false}" (click)="clickYes()"><md-icon>check</md-icon>Ja</button>
+          <button md-raised-button class="button-no" [ngClass]="{'active': answer === false, 'inactive': answer === true}" (click)="clickNo()"><md-icon>clear</md-icon>Nein</button>
+        </md-card-content>
+      </div>
+      <div class="answer-block">
+        <div class="answer-yes" *ngIf="answer === true">
+          <div class="paragraph-icon">
+            <button md-mini-fab class="button-yes" disabled><md-icon>check</md-icon></button>
+          </div>
+          <div class="question-feedback">
+            {{question.true}}
+          </div>
+        </div>
+        <div class="answer-no" *ngIf="answer === false">
+          <div class="paragraph-icon">
+            <button md-mini-fab class="button-no" disabled><md-icon>clear</md-icon></button>
+          </div>
+          <div class="question-feedback">
+            {{question.false}}
+          </div>
+        </div>
+      </div>
+      <md-card-actions>
+        <button md-button class="navigation navigation-left" (click)="clickPrevious()" [disabled]="questionId == 0"><md-icon>chevron_left</md-icon>Zurück</button>
+        <button md-button class="navigation navigation-right" (click)="clickNext()"  *ngIf="topic.questions.length != questionId+1" [disabled]="answer == undefined">Weiter<md-icon>chevron_right</md-icon></button>
+        <button md-button class="navigation navigation-right" (click)="clickScore()" *ngIf="topic.questions.length == questionId+1">Auswertung<md-icon>chevron_right</md-icon></button>
+      </md-card-actions>
+    </md-card>
   </div>
-  <div class="answer-block" [@answer]="answer">
-    <div class="answer-yes" *ngIf="answer === true">
-      <div class="paragraph-icon">
-        <button md-mini-fab class="button-yes" disabled><md-icon>check</md-icon></button>
-      </div>
-      <div class="question-feedback">
-        {{question.true}}
-      </div>
-    </div>
-    <div class="answer-no" *ngIf="answer === false">
-      <div class="paragraph-icon">
-        <button md-mini-fab class="button-no" disabled><md-icon>clear</md-icon></button>
-      </div>
-      <div class="question-feedback">
-        {{question.false}}
-      </div>
-    </div>
-  </div>
-  <md-card-actions>
-    <button md-button class="navigation navigation-left" [routerLink]="['/thema', topicId, 'frage', questionId-1]" [disabled]="questionId == 0"><md-icon>chevron_left</md-icon>Zurück</button>
-    <button md-button class="navigation navigation-right" [routerLink]="['/thema', topicId, 'frage', questionId+1]" *ngIf="topic.questions.length != questionId+1" [disabled]="answer == undefined">Weiter<md-icon>chevron_right</md-icon></button>
-    <button md-button class="navigation navigation-right" [routerLink]="['/thema', topicId, 'auswertung']" *ngIf="topic.questions.length == questionId+1">Auswertung<md-icon>chevron_right</md-icon></button>
-  </md-card-actions>
-</md-card>
+</div>

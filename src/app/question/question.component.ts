@@ -1,59 +1,45 @@
-import { Component, OnInit, trigger, state, style, transition, keyframes, animate} from '@angular/core';
+import { Component, OnInit, trigger, style, transition, animate, HostBinding, ChangeDetectorRef} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ClimateCheck } from '../climate-check';
 import { CheckStorageService } from '../check-storage.service';
+import { ColorThemeService } from '../color-theme.service';
 
 @Component({
   templateUrl: './question.component.html',
+  selector: 'app-question',
   styleUrls: ['./question.component.less'],
   animations: [
-    trigger('questionId', [
-      state('*', style({height: '*'})),
-      transition('* <=> *', [
-          animate('150ms ease-in-out', keyframes([
-          style({transform: 'scale(1)', offset: 0}),
-          style({transform: 'scale(0.95)',  offset: 0.4}),
-          style({transform: 'scale(1.01)',  offset: 0.95}),
-          style({transform: 'scale(1)',     offset: 1})
-        ]))
-      ])
-    ]),
-    trigger('answer', [
-      state('*', style({height: '*'})),
-      transition('* <=> *', [
-          animate('150ms ease-in-out', keyframes([
-          style({transform: 'scale(1)', offset: 0}),
-          style({transform: 'scale(0.95)',  offset: 0.4}),
-          style({transform: 'scale(1.01)',  offset: 0.95}),
-          style({transform: 'scale(1)',     offset: 1})
-        ]))
+    trigger('animation', [
+      transition('void => *', [
+        style({
+          opacity: 0,
+          transform: 'scale(0.9)'
+        }),
+        animate('0.5s ease-in')
+      ]),
+      transition('* => void', [
+        animate('0.5s ease-in', style({
+          transform: 'translateX(-100%) rotate(-3deg)'
+        }))
       ])
     ])
   ]
 })
 export class QuestionComponent implements OnInit {
 
+  @HostBinding('@animation') get animation() { return; }
+
   topicId: number;
   questionId: number;
   topic: Object;
   question: Object;
-
   answer: boolean;
 
-  constructor(private route: ActivatedRoute, private router: Router, private checkStorageService: CheckStorageService) {
-
-    // Subscribe to route changings
-    this.router.events.subscribe((val) => {
-      this.loadData();
-    });
-  }
+  constructor(private changeDet: ChangeDetectorRef, private route: ActivatedRoute, private router: Router, private checkStorageService: CheckStorageService, private theme: ColorThemeService) { }
 
   ngOnInit() {
-    this.loadData();
-  }
-
-  loadData() {
       this.topicId = parseInt(this.route.snapshot.params['topic'], 10);
+      this.theme.topicId = this.topicId;
       this.questionId = parseInt(this.route.snapshot.params['question'], 10);
 
       this.topic = ClimateCheck.topics[this.topicId];
@@ -76,4 +62,15 @@ export class QuestionComponent implements OnInit {
     this.checkStorageService.setAnswer(this.topicId, this.questionId, false);
   }
 
+  clickPrevious() {
+    this.router.navigate(['/animate', 'thema', this.topicId, 'frage', this.questionId-1]);
+  }
+
+  clickNext() {
+    this.router.navigate(['/animate', 'thema', this.topicId, 'frage', this.questionId+1]);
+  }
+
+  clickScore() {
+    this.router.navigate(['/animate', 'thema', this.topicId, 'auswertung']);
+  }
 }

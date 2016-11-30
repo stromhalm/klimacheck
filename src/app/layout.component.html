@@ -1,11 +1,3 @@
-<md-sidenav-layout>
-	<md-sidenav #start mode="side" opened="true">
-		<app-sidebar></app-sidebar>
-	</md-sidenav>
-
-	<div class="content-container">
-  		<div class="content-frame">
-			<router-outlet></router-outlet>
-  		</div>
-	</div>
-</md-sidenav-layout>
+<div class="backgound-color" [ngClass]="['topic-'+theme.topicId]">
+    <router-outlet></router-outlet>
+</div>
