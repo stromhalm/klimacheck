@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
 import { Routes, RouterModule } from '@angular/router';
-import { LocalStorageService, LOCAL_STORAGE_SERVICE_CONFIG } from 'angular-2-local-storage';
+import { LocalStorageModule } from 'angular-2-local-storage';
 
 import { CheckStorageService } from './check-storage.service';
 import { ColorThemeService } from './color-theme.service';
@@ -23,13 +23,6 @@ const appRoutes: Routes = [
   { path: '**', redirectTo: '' }
 ];
 
-// Create config options (see ILocalStorageServiceConfigOptions) for deets:
-let localStorageServiceConfig = {
-    prefix: 'klima-check',
-    storageType: 'localStorage'
-};
-
-
 @NgModule({
   declarations: [
     LayoutComponent,
@@ -39,18 +32,18 @@ let localStorageServiceConfig = {
     RedirectComponent
   ],
   imports: [
+    LocalStorageModule.withConfig({
+        prefix: 'klima-check',
+        storageType: 'localStorage'
+    }),
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
     MaterialModule.forRoot()
   ],
   providers: [
-    LocalStorageService,
     CheckStorageService,
-    ColorThemeService,
-    {
-      provide: LOCAL_STORAGE_SERVICE_CONFIG, useValue: localStorageServiceConfig
-    }
+    ColorThemeService
   ],
   bootstrap: [LayoutComponent]
 })

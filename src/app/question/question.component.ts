@@ -35,7 +35,13 @@ export class QuestionComponent implements OnInit {
   question: Object;
   answer: boolean;
 
-  constructor(private changeDet: ChangeDetectorRef, private route: ActivatedRoute, private router: Router, private checkStorageService: CheckStorageService, private theme: ColorThemeService) { }
+  constructor(
+    private changeDet: ChangeDetectorRef,
+    private route: ActivatedRoute,
+    private router: Router,
+    private checkStorageService: CheckStorageService,
+    private theme: ColorThemeService
+  ) {}
 
   ngOnInit() {
       this.topicId = parseInt(this.route.snapshot.params['topic'], 10);
