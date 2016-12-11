@@ -15,24 +15,25 @@
     "@angular/common": "~2.3.0",
     "@angular/compiler": "~2.3.0",
     "@angular/core": "~2.3.0",
+    "@angular/flex-layout": "git+https://github.com/angular/flex-layout.git#master",
     "@angular/forms": "~2.3.0",
     "@angular/http": "~2.3.0",
     "@angular/material": "^2.0.0-alpha.11",
     "@angular/platform-browser": "~2.3.0",
     "@angular/platform-browser-dynamic": "~2.3.0",
     "@angular/router": "~3.3.0",
+    "angular-2-local-storage": "^1.0.0",
     "core-js": "^2.4.1",
-    "rxjs": "5.0.0-beta.12",
+    "rxjs": "5.0.0-rc.5",
     "ts-helpers": "^1.1.2",
     "web-animations-js": "^2.2.2",
-    "zone.js": "^0.7.2",
-    "angular-2-local-storage": "^1.0.0"
+    "zone.js": "^0.7.2"
   },
   "devDependencies": {
     "@types/jasmine": "^2.2.30",
     "@types/node": "^6.0.42",
-    "angular-cli": "1.0.0-beta.19-3",
-    "codelyzer": "1.0.0-beta.1",
+    "angular-cli": "1.0.0-beta.22-1",
+    "codelyzer": "2.0.0-beta.3",
     "jasmine-core": "2.4.1",
     "jasmine-spec-reporter": "2.5.0",
     "karma": "1.2.0",
@@ -42,8 +43,8 @@
     "karma-remap-istanbul": "^0.2.1",
     "protractor": "4.0.9",
     "ts-node": "1.2.1",
-    "tslint": "3.13.0",
-    "typescript": "~2.0.3",
-    "webdriver-manager": "10.2.5"
+    "tslint": "4.0.2",
+    "typescript": "~2.1.4",
+    "webdriver-manager": "10.2.10"
   }
 }

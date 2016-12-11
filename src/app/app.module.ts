@@ -12,6 +12,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { QuestionComponent } from './question/question.component';
 import { ScoreComponent } from './score/score.component';
 import { RedirectComponent } from './redirect/redirect.component';
+import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes = [
   { path: 'thema/:topic/frage/:question', component: QuestionComponent },
@@ -19,7 +20,7 @@ const appRoutes: Routes = [
   { path: 'animate/thema/:topic/auswertung', component: RedirectComponent },
   { path: 'thema/:topic/auswertung', component: ScoreComponent },
   { path: 'thema/:topic', redirectTo: '/thema/:topic/frage/0' },
-  { path: '', redirectTo: '/thema/0/frage/0', pathMatch: 'full' },
+  { path: '', component: HomeComponent},
   { path: '**', redirectTo: '' }
 ];
 
@@ -29,7 +30,8 @@ const appRoutes: Routes = [
     SidebarComponent,
     QuestionComponent,
     ScoreComponent,
-    RedirectComponent
+    RedirectComponent,
+    HomeComponent
   ],
   imports: [
     LocalStorageModule.withConfig({
