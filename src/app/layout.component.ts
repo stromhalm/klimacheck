@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { ColorThemeService } from './color-theme.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +7,7 @@ import { ColorThemeService } from './color-theme.service';
 })
 export class LayoutComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private theme: ColorThemeService) {}
+  constructor() {}
 
   ngOnInit() {}
 }

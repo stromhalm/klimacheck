@@ -1,8 +1,7 @@
-import { Component, OnInit, trigger, style, transition, animate, HostBinding, ChangeDetectorRef} from '@angular/core';
+import { Component, OnInit, trigger, style, transition, animate, HostBinding } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ClimateCheck } from '../climate-check';
 import { CheckStorageService } from '../check-storage.service';
-import { ColorThemeService } from '../color-theme.service';
 
 @Component({
   templateUrl: './question.component.html',
@@ -36,26 +35,23 @@ export class QuestionComponent implements OnInit {
   answer: boolean;
 
   constructor(
-    private changeDet: ChangeDetectorRef,
     private route: ActivatedRoute,
     private router: Router,
-    private checkStorageService: CheckStorageService,
-    private theme: ColorThemeService
+    private checkStorageService: CheckStorageService
   ) {}
 
   ngOnInit() {
-      this.topicId = parseInt(this.route.snapshot.params['topic'], 10);
-      this.theme.topicId = this.topicId;
-      this.questionId = parseInt(this.route.snapshot.params['question'], 10);
+    this.topicId = parseInt(this.route.parent.snapshot.params['topic'], 10);
+    this.questionId = parseInt(this.route.snapshot.params['question'], 10);
 
-      this.topic = ClimateCheck.topics[this.topicId];
-      this.question = ClimateCheck.topics[this.topicId].questions[this.questionId];
+    this.topic = ClimateCheck.topics[this.topicId];
+    this.question = ClimateCheck.topics[this.topicId].questions[this.questionId];
 
-      try {
-        this.answer = this.checkStorageService.getAnswer(this.topicId, this.questionId);
-      } catch (e) {
-        this.answer = undefined;
-      }
+    try {
+      this.answer = this.checkStorageService.getAnswer(this.topicId, this.questionId);
+    } catch (e) {
+      this.answer = undefined;
+    }
   }
 
   clickYes() {
@@ -69,14 +65,14 @@ export class QuestionComponent implements OnInit {
   }
 
   clickPrevious() {
-    this.router.navigate(['/animate', 'thema', this.topicId, 'frage', this.questionId-1]);
+    this.router.navigate(['animate', 'frage', this.questionId-1], { relativeTo: this.route.parent });
   }
 
   clickNext() {
-    this.router.navigate(['/animate', 'thema', this.topicId, 'frage', this.questionId+1]);
+    this.router.navigate(['animate', 'frage', this.questionId+1], { relativeTo: this.route.parent });
   }
 
   clickScore() {
-    this.router.navigate(['/animate', 'thema', this.topicId, 'auswertung']);
+    this.router.navigate(['animate', 'auswertung'], { relativeTo: this.route.parent });
   }
 }

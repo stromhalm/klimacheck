@@ -17,10 +17,11 @@ export class ScoreComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private router: Router, private checkStorageService: CheckStorageService) {
 
-    this.topicId = parseInt(this.route.snapshot.params['topic'], 10);
+    this.topicId = parseInt(this.route.parent.snapshot.params['topic'], 10);
 
     // Only show when questions completed
     if (!checkStorageService.isTopicComplete(this.topicId)) {
+      console.log('not complete');
       router.navigate(['/thema', this.topicId]);
     }
 

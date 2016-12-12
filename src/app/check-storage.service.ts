@@ -29,22 +29,24 @@ export class CheckStorageService {
     for (let questionId in ClimateCheck.topics[topicId].questions) {
       if (true) {
         try {
-          if (!this.getAnswer(topicId, parseInt(questionId, 10))) {
-            return false;
-          }
+          this.getAnswer(topicId, parseInt(questionId, 10));
         } catch(e) {
           return false;
         }
-        return true;
       }
     }
+    return true;
   }
 
   public getTopicScore(topicId: number): number {
     let currentPoints = 0;
     ClimateCheck.topics[topicId].questions.forEach((question, questionId) => {
-      if (this.getAnswer(topicId, questionId)) {
-        currentPoints += question.points;
+      try {
+        if (this.getAnswer(topicId, questionId)) {
+          currentPoints += question.points;
+        }
+      } catch(e) {
+        return false;
       }
     });
     return currentPoints;
