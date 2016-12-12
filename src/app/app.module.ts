@@ -6,7 +6,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { LocalStorageModule } from 'angular-2-local-storage';
 
 import { CheckStorageService } from './check-storage.service';
-import { ColorThemeService } from './color-theme.service';
 import { LayoutComponent } from './layout.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { QuestionComponent } from './question/question.component';
@@ -52,7 +51,6 @@ const appRoutes: Routes = [
   ],
   providers: [
     CheckStorageService,
-    ColorThemeService
   ],
   bootstrap: [LayoutComponent]
 })
