@@ -6,6 +6,8 @@ export class ClimateCheck {
                 menuName: 'Energie & Gebäude',
                 fullName: 'Energie in Geschäfts-/ Bildungsstätten',
                 icon: 'lightbulb_outline',
+                primaryColor: '#7e57c2',
+                secondaryColor: '#b388ff',
                 questions: [
                     {
                         points: 3,
@@ -84,6 +86,8 @@ export class ClimateCheck {
                 menuName: 'Verhalten',
                 fullName: 'Verhalten im Büro',
                 icon: 'accessibility',
+                primaryColor: '#ff5252',
+                secondaryColor: '#ff8a80',
                 questions: [
                     {
                         points: 1,
@@ -202,6 +206,8 @@ export class ClimateCheck {
                 menuName: 'Veranstaltungen',
                 fullName: 'Veranstaltungen (z.B. Zeltlager, Seminare)',
                 icon: 'event',
+                primaryColor: '#03a9f4',
+                secondaryColor: '#7ff6f6',
                 questions: [
                     {
                         points: 3,
@@ -304,6 +310,8 @@ export class ClimateCheck {
                 menuName: 'Verband',
                 fullName: 'Verankerung im Verband',
                 icon: 'group',
+                primaryColor: '#00C853',
+                secondaryColor: '#63e3a4',
                 questions: [
                     {
                         points: 2,

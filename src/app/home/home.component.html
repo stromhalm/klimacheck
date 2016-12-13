@@ -1,23 +1,25 @@
-<md-toolbar>
+<md-toolbar [@slideDown]>
   <span>Klima-Check</span>
 </md-toolbar>
 <div class="content">
 
-  <md-card class="info-card">
+  <md-card class="info-card" [@expandY]>
     <md-card-title>Wie klimafreundlich ist unser Verband?</md-card-title>
     <md-card-subtitle>Was können wir besser machen?</md-card-subtitle>
     <md-card-content>
         <p>Antworten auf diese Fragen liefert euch der <b>Klima-Check</b>. Es soll eurem Verband als Orientierung dienen. Findet heraus, in welchen Bereichen ihr euch schon klimafreundlich verhaltet und in welchen Bereichen es noch Potenzial zur Verbesserung gibt.</p>
     </md-card-content>
     <md-card-actions align="end">
+      <div [@buttonScale] class="fab-position">
         <button md-fab><md-icon>play_arrow</md-icon></button>
+      </div>
     </md-card-actions>
   </md-card>
 
   <div class="categories">
-    <div class="category" *ngFor="let topic of topics" (click)="startTopic(topic)">
-      <md-icon class="topic-icon">{{topic.icon}}</md-icon>
-      <div class="name-bar">
+    <div class="category" *ngFor="let topic of topics; let topicIndex = index" (click)="startTopic(topicIndex)" [ngStyle]="{backgroundColor: topic.secondaryColor}" [@cascadeUp]="topicIndex">
+      <md-icon class="topic-icon" [ngStyle]="{color: topic.primaryColor}">{{topic.icon}}</md-icon>
+      <div class="name-bar" [ngStyle]="{backgroundColor: topic.primaryColor}">
         {{ topic.menuName }} <md-icon>play_arrow</md-icon>
       </div>
     </div>

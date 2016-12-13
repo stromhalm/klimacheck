@@ -14,10 +14,10 @@ import { CheckStorageService } from '../check-storage.service';
           opacity: 0,
           transform: 'scale(0.9)'
         }),
-        animate('0.5s ease-in')
+        animate('337ms cubic-bezier(0.4, 0, 0.2, 1)')
       ]),
       transition('* => void', [
-        animate('0.5s ease-in', style({
+        animate('337ms cubic-bezier(0.4, 0, 0.2, 1)', style({
           transform: 'translateX(-100%) rotate(-3deg)'
         }))
       ])
