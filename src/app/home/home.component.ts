@@ -1,4 +1,4 @@
-import { Component, OnInit, trigger, style, transition, animate, } from '@angular/core';
+import { Component, OnInit, trigger, style, transition, animate, HostBinding } from '@angular/core';
 import { ClimateCheck } from '../climate-check';
 import { CheckStorageService } from '../check-storage.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -60,11 +60,29 @@ import { ActivatedRoute, Router } from '@angular/router';
           opacity: 0
         }),
         animate('337ms .15s cubic-bezier(0.4, 0, 0.2, 1)')
+      ]),
+      transition('void => *', [
+        style({
+          transform: 'translateY(80%)',
+          opacity: 0
+        }),
+        animate('337ms cubic-bezier(0.4, 0, 0.2, 1)')
       ])
-    ])
+    ]),
+    trigger('fadeOut', [
+      transition('* => void', [
+        animate('337ms cubic-bezier(0.4, 0, 0.2, 1)',
+          style({
+            opacity: 0
+          })
+        )
+      ]),
+    ]),
   ]
 })
 export class HomeComponent implements OnInit {
+
+  @HostBinding('@fadeOut') get animation() { return; }
 
   topics = ClimateCheck.topics;
 
