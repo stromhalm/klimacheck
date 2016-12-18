@@ -13,6 +13,9 @@ import { ScoreComponent } from './score/score.component';
 import { RedirectComponent } from './redirect/redirect.component';
 import { HomeComponent } from './home/home.component';
 import { TopicComponent } from './topic/topic.component';
+import { MenuBarComponent } from './menu-bar/menu-bar.component';
+import { InfoCardComponent } from './info-card/info-card.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 const appRoutes: Routes = [
 
@@ -25,7 +28,13 @@ const appRoutes: Routes = [
       { path: 'animate/auswertung', component: RedirectComponent },
     ]
   },
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent,
+    children: [
+      { path: '', component: MenuBarComponent, outlet: 'top-bar'},
+      { path: '', component: InfoCardComponent, outlet: 'info-card'},
+      { path: '', component: CategoriesComponent, outlet: 'categories'}
+    ]
+  },
   { path: '**', redirectTo: '' }
 ];
 
@@ -37,7 +46,10 @@ const appRoutes: Routes = [
     ScoreComponent,
     RedirectComponent,
     HomeComponent,
-    TopicComponent
+    TopicComponent,
+    MenuBarComponent,
+    InfoCardComponent,
+    CategoriesComponent
   ],
   imports: [
     LocalStorageModule.withConfig({
@@ -54,6 +66,4 @@ const appRoutes: Routes = [
   ],
   bootstrap: [LayoutComponent]
 })
-export class AppModule {
-
-}
+export class AppModule { }

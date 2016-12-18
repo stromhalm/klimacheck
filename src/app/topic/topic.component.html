@@ -1,3 +1,8 @@
 <div class="background-color" [ngStyle]="{backgroundColor: topic.secondaryColor}" [@inAnimation]>
+  <div class="back-button-frame">
+    <button md-button class="back-button" [@buttonScale] (click)="goToHome()">
+      <md-icon class="back-icon">keyboard_backspace</md-icon>
+    </button>
+  </div>
   <router-outlet></router-outlet>
 </div>
