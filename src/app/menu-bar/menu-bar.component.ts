@@ -1,4 +1,5 @@
 import { Component, OnInit, trigger, style, transition, animate, HostBinding } from '@angular/core';
+import { CheckStorageService } from '../check-storage.service';
 
 @Component({
   selector: 'app-menu-bar',
@@ -28,9 +29,13 @@ export class MenuBarComponent implements OnInit {
 
   @HostBinding('@slideDown') get animation() { return 'Ts'; }
 
-  constructor() { }
+  constructor(private storage: CheckStorageService) { }
 
   ngOnInit() {
+  }
+
+  resetStorage() {
+    this.storage.reset();
   }
 
 }

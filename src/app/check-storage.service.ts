@@ -72,4 +72,8 @@ export class CheckStorageService {
     }
     return '';
   }
+
+  public reset() {
+    localStorage.clear();
+  }
 }
