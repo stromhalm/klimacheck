@@ -1,6 +1,6 @@
-<div class="category app-card" *ngFor="let topic of topics; let topicIndex = index" (click)="startTopic(topicIndex)" [ngStyle]="{backgroundColor: topic.secondaryColor}" [@cascadeUp]="topicIndex">
+<md-card md-ripple class="category" *ngFor="let topic of topics; let topicIndex = index" (click)="startTopic(topicIndex)" [ngStyle]="{backgroundColor: topic.secondaryColor}" [@cascadeUp]="topicIndex">
   <md-icon class="topic-icon" [ngStyle]="{color: topic.primaryColor}">{{topic.icon}}</md-icon>
   <div class="name-bar" [ngStyle]="{backgroundColor: topic.primaryColor}">
     {{ topic.menuName }} <md-icon>play_arrow</md-icon>
   </div>
-</div>
+</md-card>

@@ -24,6 +24,8 @@ import { Component, OnInit, trigger, style, transition, animate, HostBinding } f
 })
 export class MenuBarComponent implements OnInit {
 
+  menuButton: String;
+
   @HostBinding('@slideDown') get animation() { return 'Ts'; }
 
   constructor() { }
