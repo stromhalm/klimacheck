@@ -19,8 +19,23 @@ md-card {
     max-width: 800px;
     margin: 0 auto;
 
+    .card-header {
+        color: white;
+        margin: -24px;
+        margin-bottom: 45px;
+        padding: 24px;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+        border-bottom: 1px solid rgba(3, 3, 3, 0.12);
+
+        md-card-subtitle {
+            color: rgba(255, 255, 255, 0.75);
+        }
+    }
+
     .answer-buttons {
         text-align: center;
+        margin-bottom: -57px;
 
         button {
             margin: 15px;
@@ -37,17 +52,13 @@ md-card {
     }
 
     .button-yes {
-        background-color: #8BC34A;
+        background-color: rgb(0, 200, 83);
         color: white;
     }
 
     .button-no {
-        background-color: #FF5722;
+        background-color: rgb(255, 82, 82);;
         color: white;
-    }
-
-    .question-feedback {
-        padding-left: 60px;
     }
 
     md-card-actions {

@@ -1,14 +1,15 @@
-import { Component, OnInit, trigger, style, transition, animate, HostBinding } from '@angular/core';
+import { Component, OnInit, trigger, style, transition, animate, HostBinding, state } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ClimateCheck } from '../climate-check';
 import { CheckStorageService } from '../check-storage.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   templateUrl: './question.component.html',
   selector: 'app-question',
   styleUrls: ['./question.component.less'],
   animations: [
-    trigger('animation', [
+    trigger('slideIn', [
       transition('void => *', [
         style({
           opacity: 0,
@@ -21,18 +22,30 @@ import { CheckStorageService } from '../check-storage.service';
           transform: 'translateX(-100%) rotate(-3deg)'
         }))
       ])
+    ]),
+    trigger('centerButtons', [
+      state('center', style({
+        transform: 'translateY(40px)'
+      })),
+      transition('void => center', animate('0s')),
+      transition('* => *', animate('337ms cubic-bezier(0.4, 0, 0.2, 1)')),
     ])
   ]
 })
 export class QuestionComponent implements OnInit {
 
-  @HostBinding('@animation') get animation() { return; }
+  @HostBinding('@slideIn') get slideIn() { return; }
 
   topicId: number;
   questionId: number;
   topic: Object;
   question: Object;
   answer: boolean;
+
+  get centerButtons() {
+    if (this.answer === undefined) return 'center';
+    return 'border';
+  }
 
   constructor(
     private route: ActivatedRoute,
@@ -49,6 +62,11 @@ export class QuestionComponent implements OnInit {
 
     try {
       this.answer = this.checkStorageService.getAnswer(this.topicId, this.questionId);
+      if (this.answer) {
+        this.router.navigate(['yes'], { relativeTo: this.route, skipLocationChange: true  });
+      } else {
+        this.router.navigate(['no'], { relativeTo: this.route, skipLocationChange: true  });
+      }
     } catch (e) {
       this.answer = undefined;
     }
@@ -56,11 +74,13 @@ export class QuestionComponent implements OnInit {
 
   clickYes() {
     this.answer = true;
+    this.router.navigate(['yes'], { relativeTo: this.route, skipLocationChange: true  });
     this.checkStorageService.setAnswer(this.topicId, this.questionId, true);
   }
 
   clickNo() {
     this.answer = false;
+    this.router.navigate(['no'], { relativeTo: this.route, skipLocationChange: true });
     this.checkStorageService.setAnswer(this.topicId, this.questionId, false);
   }
 

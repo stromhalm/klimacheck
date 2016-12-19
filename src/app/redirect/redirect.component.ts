@@ -11,7 +11,7 @@ export class RedirectComponent implements OnInit {
 
   ngOnInit() {
     if (this.route.snapshot.params['question']) {
-      this.router.navigate(['frage', this.route.snapshot.params['question']], {relativeTo: this.route.parent});
+      this.router.navigate(['frage', this.route.snapshot.params['question']], {relativeTo: this.route.parent });
     } else {
       this.router.navigate(['auswertung'], { relativeTo: this.route.parent });
     }

@@ -93,7 +93,7 @@ export class ClimateCheck {
                         points: 1,
                         category: 'Technische Geräte in Büro/Geschäftsstelle',
                         question: 'Schaltet ihr den Bildschirm am PC in der Pause aus? Bzw. schaltet ihr den Laptop in den Ruhezustand?',
-                        true: 'Schaltet ihr den Bildschirm am PC in der Pause aus? Bzw. schaltet ihr den Laptop in den Ruhezustand?',
+                        true: 'Ihr wollt noch mehr Strom sparen? Dann könnten hier neue Tipps dabei sein: http://www.klima-sucht-schutz.de/energie-sparen/strom-sparen/strom-sparen-stromspartipps/strom-sparen-tipps-und-tricks/',
                         false: 'Achtet beim Arbeiten am PC/Laptop darauf, dass er sich schon bei kürzeren Denk- oder Arbeitspausen automatisch in den Standby-Modus schaltet. (siehe Systemeinstellungen). Nicht vergessen: Bei längeren Pausen (spätestens ab 1 Stunde) bitte komplett herunterfahren.'
                     },
                     {

@@ -16,13 +16,20 @@ import { TopicComponent } from './topic/topic.component';
 import { MenuBarComponent } from './menu-bar/menu-bar.component';
 import { InfoCardComponent } from './info-card/info-card.component';
 import { CategoriesComponent } from './categories/categories.component';
+import { AnswerYesComponent } from './answer-yes/answer-yes.component';
+import { AnswerNoComponent } from './answer-no/answer-no.component';
 
 const appRoutes: Routes = [
 
   { path: 'thema/:topic', component: TopicComponent,
     children: [
       { path: '', redirectTo: 'frage/0', pathMatch: 'full' },
-      { path: 'frage/:question', component: QuestionComponent },
+      { path: 'frage/:question', component: QuestionComponent,
+        children: [
+          { path: 'yes', component: AnswerYesComponent },
+          { path: 'no', component: AnswerNoComponent }
+        ]
+      },
       { path: 'auswertung', component: ScoreComponent },
       { path: 'animate/frage/:question', component: RedirectComponent },
       { path: 'animate/auswertung', component: RedirectComponent },
@@ -49,7 +56,9 @@ const appRoutes: Routes = [
     TopicComponent,
     MenuBarComponent,
     InfoCardComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    AnswerYesComponent,
+    AnswerNoComponent
   ],
   imports: [
     LocalStorageModule.withConfig({
