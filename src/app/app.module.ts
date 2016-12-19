@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
 import { Routes, RouterModule } from '@angular/router';
 import { LocalStorageModule } from 'angular-2-local-storage';
+import { MarkdownToHtmlPipe } from 'markdown-to-html-pipe';
 
 import { CheckStorageService } from './check-storage.service';
 import { LayoutComponent } from './layout.component';
@@ -72,6 +73,7 @@ const appRoutes: Routes = [
   ],
   providers: [
     CheckStorageService,
+    MarkdownToHtmlPipe
   ],
   bootstrap: [LayoutComponent]
 })

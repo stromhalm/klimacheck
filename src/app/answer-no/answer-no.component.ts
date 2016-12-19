@@ -2,6 +2,7 @@ import { Component, OnInit, trigger, style, transition, animate, HostBinding } f
 import { Router, ActivatedRoute } from '@angular/router';
 import { ClimateCheck } from '../climate-check';
 import { CheckStorageService } from '../check-storage.service';
+import { MarkdownToHtmlPipe } from 'markdown-to-html-pipe';
 
 @Component({
   selector: 'app-answer-no',
@@ -37,11 +38,13 @@ export class AnswerNoComponent implements OnInit {
   questionId: number;
   topic: Object;
   question: Object;
+  formattedAnswer: String;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private checkStorageService: CheckStorageService
+    private checkStorageService: CheckStorageService,
+    private mdPipe: MarkdownToHtmlPipe
   ) {}
 
   ngOnInit() {
@@ -50,5 +53,12 @@ export class AnswerNoComponent implements OnInit {
 
     this.topic = ClimateCheck.topics[this.topicId];
     this.question = ClimateCheck.topics[this.topicId].questions[this.questionId];
+    this.formattedAnswer = this.mdPipe.transform(this.question['false'])
+    .replace('  ', '</p><p>')
+    .replace('  ', '</p><p>')
+    .replace('  ', '</p><p>')
+    .replace('<a href', '<a target="_blank" href')
+    .replace('<a href', '<a target="_blank" href')
+    .replace('<a href', '<a target="_blank" href');
   }
 }

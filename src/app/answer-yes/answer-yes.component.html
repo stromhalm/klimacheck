@@ -1,6 +1,4 @@
 <div class="paragraph-icon">
   <button md-mini-fab class="button-yes" disabled><md-icon>check</md-icon></button>
 </div>
-<div class="question-feedback">
-  {{question.true}}
-</div>
+<div class="question-feedback" [innerHTML]="formattedAnswer"></div>

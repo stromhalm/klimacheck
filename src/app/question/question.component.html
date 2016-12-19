@@ -9,7 +9,6 @@
             <button md-raised-button md-ripple class="button-no" [ngClass]="{'active': answer === false, 'inactive': answer === true}" (click)="clickNo()"><md-icon>clear</md-icon>Nein</button>
         </div>
       </md-card-content>
-      {{ answerNo }}
       <div class="answer-block">
         <router-outlet></router-outlet>
       </div>
