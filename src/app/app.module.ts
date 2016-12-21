@@ -19,6 +19,8 @@ import { InfoCardComponent } from './info-card/info-card.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { AnswerYesComponent } from './answer-yes/answer-yes.component';
 import { AnswerNoComponent } from './answer-no/answer-no.component';
+import { TotalScoreComponent } from './total-score/total-score.component';
+import { TotalScoreCardComponent } from './total-score-card/total-score-card.component';
 
 const appRoutes: Routes = [
 
@@ -40,7 +42,8 @@ const appRoutes: Routes = [
     children: [
       { path: '', component: MenuBarComponent, outlet: 'top-bar'},
       { path: '', component: InfoCardComponent, outlet: 'info-card'},
-      { path: '', component: CategoriesComponent, outlet: 'categories'}
+      { path: '', component: CategoriesComponent, outlet: 'categories'},
+      { path: '', component: TotalScoreCardComponent, outlet: 'bottom-card'}
     ]
   },
   { path: '**', redirectTo: '' }
@@ -59,7 +62,9 @@ const appRoutes: Routes = [
     InfoCardComponent,
     CategoriesComponent,
     AnswerYesComponent,
-    AnswerNoComponent
+    AnswerNoComponent,
+    TotalScoreComponent,
+    TotalScoreCardComponent
   ],
   imports: [
     LocalStorageModule.withConfig({

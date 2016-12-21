@@ -2,7 +2,6 @@ import { Component, OnInit, trigger, style, transition, animate, HostBinding, st
 import { ActivatedRoute, Router } from '@angular/router';
 import { ClimateCheck } from '../climate-check';
 import { CheckStorageService } from '../check-storage.service';
-import { Observable } from 'rxjs/Observable';
 
 @Component({
   templateUrl: './question.component.html',

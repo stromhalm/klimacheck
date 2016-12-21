@@ -12,7 +12,7 @@ import { CheckStorageService } from '../check-storage.service';
       transition('* => *', [
         style({
           height: 0,
-          transform: 'scaleY(0)'
+          transform: 'translateY(0)'
         }),
         animate('337ms 674ms cubic-bezier(0.4, 0, 0.2, 1)')
       ])

@@ -6,13 +6,13 @@ import { CheckStorageService } from '../check-storage.service';
   templateUrl: './menu-bar.component.html',
   animations: [
     trigger('slideDown', [
-      transition('void => *', [
+      transition(':enter', [
         style({
           transform: 'translateY(-110%)'
         }),
         animate('337ms cubic-bezier(0.4, 0, 0.2, 1)')
       ]),
-      transition('* => void', [
+      transition(':leave', [
         animate('337ms cubic-bezier(0.4, 0, 0.2, 1)',
           style({
             transform: 'translateY(-110%)'
