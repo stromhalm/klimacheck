@@ -276,7 +276,6 @@ export class ClimateCheck {
                         points: 1,
                         category: 'Anreise bei Veranstaltungen',
                         question: 'Prüft ihr die Erreichbarkeit des Hauses mit öffentlichen Verkehrsmitteln, bevor ihr euch für ein Tagungshaus entscheidet und fordert die Teilnehmenden auf, mit diesen anzureisen?',
-                        true: 'asd',
                         false: 'Falls das Tagungshaus abgelegen ist, dann könntest du als Veranstalter_in , wenn alle einverstanden sind, die Teilnahmeliste an alle verschicken, so dass Fahrgemeinschaften gebildet werden können.'
                     },
                     {

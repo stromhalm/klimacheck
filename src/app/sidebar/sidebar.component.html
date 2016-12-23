@@ -1,6 +1,0 @@
-<img src="assets/klima-check.png" class="logo">
-<br>
-<button *ngFor="let topic of topics; let i = index" [routerLink]="['/thema', i]" routerLinkActive="active" md-button>
-    <md-icon *ngIf="topic.icon">{{topic.icon}}</md-icon>
-    {{topic.menuName}}
-</button>

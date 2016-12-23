@@ -1,5 +1,5 @@
 import { Component, OnInit, trigger, style, transition, animate, HostBinding } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { ClimateCheck } from '../climate-check';
 
 @Component({
@@ -23,14 +23,6 @@ import { ClimateCheck } from '../climate-check';
           })
         )
       ])
-    ]),
-    trigger('buttonScale', [
-      transition('void => *', [
-        style({
-          transform: 'scaleX(0)'
-        }),
-        animate('337ms cubic-bezier(0.4, 0, 0.2, 1)')
-      ]),
     ])
   ]
 })
@@ -42,16 +34,11 @@ export class TopicComponent implements OnInit {
   topic: Object;
 
   constructor(
-    private route: ActivatedRoute,
-    private router: Router
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
     this.topicId = parseInt(this.route.snapshot.params['topic'], 10);
     this.topic = ClimateCheck.topics[this.topicId];
-  }
-
-  goToHome() {
-    this.router.navigate(['/']);
   }
 }

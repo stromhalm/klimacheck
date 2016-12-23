@@ -8,7 +8,6 @@ import { MarkdownToHtmlPipe } from 'markdown-to-html-pipe';
 
 import { CheckStorageService } from './check-storage.service';
 import { LayoutComponent } from './layout.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { QuestionComponent } from './question/question.component';
 import { ScoreComponent } from './score/score.component';
 import { RedirectComponent } from './redirect/redirect.component';
@@ -21,6 +20,8 @@ import { AnswerYesComponent } from './answer-yes/answer-yes.component';
 import { AnswerNoComponent } from './answer-no/answer-no.component';
 import { TotalScoreComponent } from './total-score/total-score.component';
 import { TotalScoreCardComponent } from './total-score-card/total-score-card.component';
+import { BackButtonComponent } from './back-button/back-button.component';
+import { TotalScoreEvaluationComponent } from './total-score-evaluation/total-score-evaluation.component';
 
 const appRoutes: Routes = [
 
@@ -38,6 +39,11 @@ const appRoutes: Routes = [
       { path: 'animate/auswertung', component: RedirectComponent },
     ]
   },
+  { path: 'auswertung', component: TotalScoreComponent,
+    children: [
+      { path: '', component: TotalScoreEvaluationComponent }
+    ]
+  },
   { path: '', component: HomeComponent,
     children: [
       { path: '', component: MenuBarComponent, outlet: 'top-bar'},
@@ -52,7 +58,6 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     LayoutComponent,
-    SidebarComponent,
     QuestionComponent,
     ScoreComponent,
     RedirectComponent,
@@ -64,7 +69,9 @@ const appRoutes: Routes = [
     AnswerYesComponent,
     AnswerNoComponent,
     TotalScoreComponent,
-    TotalScoreCardComponent
+    TotalScoreCardComponent,
+    BackButtonComponent,
+    TotalScoreEvaluationComponent
   ],
   imports: [
     LocalStorageModule.withConfig({

@@ -1,7 +1,5 @@
 import { Component, OnInit, trigger, style, transition, animate, HostBinding } from '@angular/core';
 import { Router } from '@angular/router';
-import { ClimateCheck } from '../climate-check';
-import { CheckStorageService } from '../check-storage.service';
 
 @Component({
   selector: 'app-total-score-card',
@@ -29,9 +27,12 @@ export class TotalScoreCardComponent implements OnInit {
 
   @HostBinding('@slideUp') get animation() { return; }
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  goToTotalScore() {
+    this.router.navigate(['/auswertung']);
+  }
 }

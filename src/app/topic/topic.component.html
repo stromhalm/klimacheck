@@ -1,8 +1,4 @@
 <div class="background-color" [ngStyle]="{backgroundColor: topic.secondaryColor}" [@inAnimation]>
-  <div class="back-button-frame">
-    <button md-button class="back-button" [@buttonScale] (click)="goToHome()">
-      <md-icon class="back-icon">arrow_back</md-icon>
-    </button>
-  </div>
+  <app-back-button></app-back-button>
   <router-outlet></router-outlet>
 </div>
