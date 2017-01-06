@@ -14,28 +14,28 @@ import { MarkdownToHtmlPipe } from 'markdown-to-html-pipe';
           height: 0,
           transform: 'scaleY(0)'
         }),
-        animate('337ms 1011ms cubic-bezier(0.4, 0, 0.2, 1)')
+        animate('337ms 1384ms cubic-bezier(0.4, 0, 0.2, 1)')
       ]),
       transition('* => 1', [
         style({
           height: 0,
           transform: 'scaleY(0)'
         }),
-        animate('337ms 1111ms cubic-bezier(0.4, 0, 0.2, 1)')
+        animate('337ms 1484ms cubic-bezier(0.4, 0, 0.2, 1)')
       ]),
       transition('* => 2', [
         style({
           height: 0,
           transform: 'scaleY(0)'
         }),
-        animate('337ms 1211ms cubic-bezier(0.4, 0, 0.2, 1)')
+        animate('337ms 1584ms cubic-bezier(0.4, 0, 0.2, 1)')
       ]),
       transition('* => 3', [
         style({
           height: 0,
           transform: 'scaleY(0)'
         }),
-        animate('337ms 1311ms cubic-bezier(0.4, 0, 0.2, 1)')
+        animate('337ms 1684ms cubic-bezier(0.4, 0, 0.2, 1)')
       ]),
       transition('* => *', [
         style({
