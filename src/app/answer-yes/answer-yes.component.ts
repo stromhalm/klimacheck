@@ -38,7 +38,7 @@ export class AnswerYesComponent implements OnInit {
   questionId: number;
   topic: Object;
   question: Object;
-  formattedAnswer: String;
+  formattedAnswer: string;
 
   constructor(
     private route: ActivatedRoute,

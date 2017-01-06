@@ -14,9 +14,7 @@
           <div class="paragraph-icon">
             <button md-mini-fab class="button-info" disabled><md-icon>perm_scan_wifi</md-icon></button>
           </div>
-          <div class="score-text">
-            {{ scoreText }}
-          </div>
+          <div class="score-text" [innerHTML]="formattedAnswer"></div>
         </div>
       </div>
       <md-card-actions>

@@ -1,8 +1,27 @@
 <md-card>
   <md-card-content class="card-header">
-    <md-card-title>Gesamtauswertung</md-card-title>
+    <md-card-subtitle>Gesamtauswertung</md-card-subtitle>
+    <md-card-title>{{ totalScoreTitle }}</md-card-title>
+    <div class="percentage" [@growUp]="totalPercentage">
+      {{ totalPercentage }} %
+    </div>
+    <md-progress-bar mode="determinate" [value]="totalPercentage"></md-progress-bar>
   </md-card-content>
   <md-card-content>
-    <i>Coming soon</i>
+    <div class="answer-block">
+      <div class="total-score" [innerHTML]="formattedScore"></div>
+    </div>
+  </md-card-content>
+  <md-card-content class="category-section" *ngFor="let topic of topics; let i = index" [@growUp]="i">
+    <md-card-subtitle>{{ topic.fullName }}</md-card-subtitle>
+    <div class="answer-block" [@slideUp]="percentage">
+      <div class="answer-score">
+        <div class="paragraph-icon">
+          <button md-mini-fab class="button-info" disabled><md-icon>{{ topic.icon }}</md-icon></button>
+        </div>
+        <div class="score-text" [innerHTML]="getFormattedText(checkStorageService.getScoreText(i))"></div>
+      </div>
+    </div>
+    
   </md-card-content>
 </md-card>

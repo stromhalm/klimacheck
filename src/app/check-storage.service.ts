@@ -38,6 +38,15 @@ export class CheckStorageService {
     return true;
   }
 
+  public allTopicsComplete(): boolean {
+    for (let i = 0; i < ClimateCheck.topics.length; i++) {
+      if (!this.isTopicComplete(i)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   public getTopicScore(topicId: number): number {
     let currentPoints = 0;
     ClimateCheck.topics[topicId].questions.forEach((question, questionId) => {
@@ -45,7 +54,7 @@ export class CheckStorageService {
         if (this.getAnswer(topicId, questionId)) {
           currentPoints += question.points;
         }
-      } catch(e) {
+      } catch (e) {
         return false;
       }
     });
@@ -63,11 +72,44 @@ export class CheckStorageService {
     return percentage;
   }
 
-  public getScoreText(topicId: number): String {
+  public getTotalPercentage(): number {
+    let maxPoints = 0;
+    let totalPoints = 0;
+    for (let topicId = 0; topicId < ClimateCheck.topics.length; topicId++) {
+      totalPoints += this.getTopicScore(topicId);
+      for (let question of ClimateCheck.topics[topicId].questions) {
+        maxPoints += question.points;
+      }
+    }
+    let percentage = Math.round((totalPoints / maxPoints) * 100);
+    return percentage;
+  }
+
+  public getScoreText(topicId: number): string {
     let currentPoints = this.getTopicScore(topicId);
     for (let score of ClimateCheck.topics[topicId].scores) {
       if (currentPoints >= score.minPoints) {
         return score.text;
+      }
+    }
+    return '';
+  }
+
+  public getTotalScoreText(): string {
+    let totalPercentage = this.getTotalPercentage();
+    for (let score of ClimateCheck.scores) {
+      if (totalPercentage >= score.minPercent) {
+        return score.text;
+      }
+    }
+    return '';
+  }
+
+  public getTotalScoreTitle(): string {
+    let totalPercentage = this.getTotalPercentage();
+    for (let score of ClimateCheck.scores) {
+      if (totalPercentage >= score.minPercent) {
+        return score.title;
       }
     }
     return '';

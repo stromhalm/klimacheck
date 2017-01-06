@@ -1,6 +1,26 @@
 export class ClimateCheck {
 
-    public static get topics(): Object {
+    public static get scores(): Array<any> {
+        return [
+                    {
+                        minPercent: 71,
+                        title: 'Klimafüchse',
+                        text: 'Ihr redet nicht nur über Umwelt- und Klimaschutz, sondern handelt auch dementsprechend – von euch können die meisten viel lernen. Auch, wenn ihr schon gut dabei seid: Gab es Bereiche, in denen "nein" angeklickt wurde? Dann sind das Bereiche, in denen ihr noch weiter kreativ für den Schutz unseres Planeten aktiv werden könnt.'
+                    },
+                    {
+                        minPercent: 41,
+                        title: 'Klima-Aufsteiger*innen',
+                        text: 'Ihr habt bereits einige Klimaschutz-Aktivitäten umgesetzt, aber da ist noch Luft nach oben. Die Bereiche, in denen ihr mit _nein_ geantwortet habt, könnt ihr dabei als Anreiz nehmen, um noch mehr für unseren Planeten zu tun - schon wenig Aufwand kann große Wirkung entfalten!'
+                    },
+                    {
+                        minPercent: 0,
+                        title: 'Klima-Einsteiger*innen',
+                        text: 'Ihr seid noch Klima-Einsteiger*innen. Bestimmt habt ihr aber schon einige Ideen, was ihr zum Schutz unseres Planeten unternehmen könnt. Die gute Nachricht: Schon mit kleinen Veränderungen könnt ihr eine Menge erreichen, also ran ans Werk!'
+                    }
+                ];
+    }
+
+    public static get topics(): Array<any> {
         return [
             {
                 menuName: 'Energie & Gebäude',
