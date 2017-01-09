@@ -9,19 +9,27 @@
   </md-card-content>
   <md-card-content>
     <div class="answer-block">
-      <div class="total-score" [innerHTML]="formattedScore"></div>
+      <div *ngIf="checkStorageService.allTopicsComplete()" class="total-score" [innerHTML]="formattedScore">
+      </div>
+      <div *ngIf="!checkStorageService.allTopicsComplete()" class="total-score">
+        <i>Alle Kategorien bearbeiten, um eine Gesamtauswertung zu erhalten</i>
+      </div>
     </div>
   </md-card-content>
   <md-card-content class="category-section" *ngFor="let topic of topics; let i = index" [@growUp]="i">
     <md-card-subtitle>{{ topic.fullName }}</md-card-subtitle>
-    <div class="answer-block" [@slideUp]="percentage">
-      <div class="answer-score">
-        <div class="paragraph-icon">
-          <button md-mini-fab class="button-info" disabled><md-icon>{{ topic.icon }}</md-icon></button>
-        </div>
-        <div class="score-text" [innerHTML]="getFormattedText(checkStorageService.getScoreText(i))"></div>
+    <div class="answer-score" [@slideUp]="percentage">
+      <div class="paragraph-icon">
+        <button md-mini-fab class="button-info" disabled><md-icon>{{ topic.icon }}</md-icon></button>
+      </div>
+      <div *ngIf="checkStorageService.isTopicComplete(i)" class="score-text" [innerHTML]="getFormattedText(checkStorageService.getScoreText(i))">
+      </div>
+      <div *ngIf="!checkStorageService.isTopicComplete(i)" class="score-text">
+        <i>Diese Kategorie ist noch nicht vollständig bearbeitet.</i>
+        <md-card-actions>
+          <button md-button class="answer-category" (click)="goToCategory(i)">Kategorie bearbeiten<md-icon>chevron_right</md-icon></button>
+        </md-card-actions>
       </div>
     </div>
-    
   </md-card-content>
 </md-card>

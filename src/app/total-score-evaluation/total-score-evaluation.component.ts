@@ -1,5 +1,6 @@
 import { Component, OnInit, trigger, style, transition, animate, HostBinding } from '@angular/core';
 import { CheckStorageService } from '../check-storage.service';
+import { Router } from '@angular/router';
 import { ClimateCheck } from '../climate-check';
 import { MarkdownToHtmlPipe } from 'markdown-to-html-pipe';
 
@@ -71,11 +72,10 @@ export class TotalScoreEvaluationComponent implements OnInit {
   formattedScore: string;
   topics = ClimateCheck.topics;
 
-  constructor(private checkStorageService: CheckStorageService, private mdPipe: MarkdownToHtmlPipe) {
+  constructor(private checkStorageService: CheckStorageService, private mdPipe: MarkdownToHtmlPipe, private router: Router) {
 
     this.totalScoreTitle = checkStorageService.getTotalScoreTitle();
     this.totalScoreText = checkStorageService.getTotalScoreText();
-
     this.formattedScore = this.getFormattedText(this.totalScoreText);
   }
 
@@ -83,6 +83,10 @@ export class TotalScoreEvaluationComponent implements OnInit {
     return this.mdPipe.transform(this.totalScoreText)
     .replace('  ', '</p><p>')
     .replace('<a ', '<a target="_blank" ');
+  }
+
+  goToCategory(categoryId: number) {
+    this.router.navigate(['/thema', categoryId]);
   }
 
   ngOnInit() {
