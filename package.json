@@ -1,6 +1,6 @@
 {
   "name": "klimacheck",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
@@ -20,11 +20,11 @@
     "@angular/material": "^2.0.0-beta.1",
     "@angular/platform-browser": "~2.4.3",
     "@angular/platform-browser-dynamic": "~2.4.3",
-    "@angular/router": "~3.3.0",
+    "@angular/router": "~3.4.3",
     "angular-2-local-storage": "^1.0.0",
     "core-js": "^2.4.1",
     "markdown-to-html-pipe": "^1.2.0",
-    "rxjs": "5.0.0-beta.12",
+    "rxjs": "5.0.3",
     "ts-helpers": "^1.1.2",
     "web-animations-js": "^2.2.2",
     "zone.js": "^0.7.2"
@@ -33,7 +33,7 @@
     "@types/jasmine": "^2.2.30",
     "@types/node": "^6.0.42",
     "angular-cli": "git+https://github.com/angular/angular-cli.git#master",
-    "codelyzer": "1.0.0-beta.1",
+    "codelyzer": "2.0.0-beta.4",
     "jasmine-core": "2.4.1",
     "jasmine-spec-reporter": "2.5.0",
     "karma": "1.2.0",
@@ -43,8 +43,19 @@
     "karma-remap-istanbul": "^0.2.1",
     "protractor": "4.0.9",
     "ts-node": "1.2.1",
-    "tslint": "3.13.0",
+    "tslint": "4.3.1",
     "typescript": "~2.0.3",
     "webdriver-manager": "10.2.5"
-  }
+  },
+  "description": "This is an early prototype for the __Klima Check__ by [Janun e.V.](http://janun.de).",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stromhalm/klima-check.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/stromhalm/klima-check/issues"
+  },
+  "homepage": "https://github.com/stromhalm/klima-check#readme"
 }
