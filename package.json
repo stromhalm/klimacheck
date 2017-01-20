@@ -30,9 +30,9 @@
     "zone.js": "^0.7.2"
   },
   "devDependencies": {
-    "@types/jasmine": "^2.2.30",
-    "@types/node": "^6.0.42",
-    "angular-cli": "git+https://github.com/angular/angular-cli.git#master",
+    "@types/jasmine": "^2.5.41",
+    "@types/node": "^7.0.0",
+    "angular-cli": "^1.0.0-beta.26",
     "codelyzer": "2.0.0-beta.4",
     "jasmine-core": "2.4.1",
     "jasmine-spec-reporter": "2.5.0",
@@ -44,7 +44,7 @@
     "protractor": "4.0.9",
     "ts-node": "1.2.1",
     "tslint": "4.3.1",
-    "typescript": "~2.0.3",
+    "typescript": "~2.1.5",
     "webdriver-manager": "10.2.5"
   },
   "description": "This is an early prototype for the __Klima Check__ by [Janun e.V.](http://janun.de).",
