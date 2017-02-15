@@ -11,5 +11,5 @@ script:
  - echo "0"
 after_success:
  - ng build --prod
- - ng github-pages:deploy --message "Deploy from Travis" --custom-domain "klimacheck.janun.de" --gh-token "$GITHUB_TOKEN"
+ - ng github-pages:deploy --message "Deploy from Travis" --custom-domain "klimacheck.janun.de"
  #- firebase deploy --token "$FIREBASE_TOKEN"
