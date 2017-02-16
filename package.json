@@ -44,7 +44,7 @@
     "protractor": "4.0.9",
     "ts-node": "1.2.1",
     "tslint": "4.3.1",
-    "typescript": "~2.1.5",
+    "typescript": "~2.1.6",
     "webdriver-manager": "10.2.5"
   },
   "description": "This is an early prototype for the __Klima Check__ by [Janun e.V.](http://janun.de).",

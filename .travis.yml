@@ -1,15 +1,15 @@
 dist: "trusty"
 sudo: "required"
 language: "node_js"
-node_js: "5.7.1"
+node_js: "7.4.0"
 os: "osx"
 install:
- - npm install -g firebase-tools
  - npm install -g angular-cli
  - npm install
 script:
  - echo "0"
 after_success:
  - ng build --prod
+ - npm install -g firebase-tools
  - firebase deploy --token "$FIREBASE_TOKEN"
 # - ng github-pages:deploy --message "Deploy from Travis" --custom-domain "klimacheck.janun.de"
