@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
 import { Routes, RouterModule } from '@angular/router';
 import { LocalStorageModule } from 'angular-2-local-storage';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MarkdownToHtmlPipe } from 'markdown-to-html-pipe';
 
 import { CheckStorageService } from './check-storage.service';
@@ -79,6 +80,7 @@ const appRoutes: Routes = [
         storageType: 'localStorage'
     }),
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
     MaterialModule.forRoot()
