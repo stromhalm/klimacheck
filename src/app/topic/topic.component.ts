@@ -31,7 +31,11 @@ export class TopicComponent implements OnInit {
   @HostBinding('@outAnimation') get animation() { return; }
 
   topicId: number;
-  topic: Object;
+  topic: {
+        menuName: string, fullName: string, icon: string, primaryColor: string, secondaryColor: string,
+        scores: Array<{minPoints: string, text: string}>,
+        questions: Array<{points: number, category: string, question: string, true: string, false: string}>
+    };
 
   constructor(
     private route: ActivatedRoute

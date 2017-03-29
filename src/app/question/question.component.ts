@@ -37,8 +37,12 @@ export class QuestionComponent implements OnInit {
 
   topicId: number;
   questionId: number;
-  topic: Object;
-  question: Object;
+  topic: {
+        menuName: string, fullName: string, icon: string, primaryColor: string, secondaryColor: string,
+        scores: Array<{minPoints: string, text: string}>,
+        questions: Array<{points: number, category: string, question: string, true: string, false: string}>
+    };
+  question: {points: number, category: string, question: string, true: string, false: string};
   answer: boolean;
 
   get centerButtons() {

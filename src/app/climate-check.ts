@@ -1,6 +1,6 @@
 export class ClimateCheck {
 
-    public static get scores(): Array<any> {
+    public static get scores(): Array<{minPercent: number, title: string, text: string}> {
         return [
                     {
                         minPercent: 71,

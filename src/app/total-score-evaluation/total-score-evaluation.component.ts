@@ -72,7 +72,7 @@ export class TotalScoreEvaluationComponent implements OnInit {
   formattedScore: string;
   topics = ClimateCheck.topics;
 
-  constructor(private checkStorageService: CheckStorageService, private mdPipe: MarkdownToHtmlPipe, private router: Router) {
+  constructor(public checkStorageService: CheckStorageService, private mdPipe: MarkdownToHtmlPipe, private router: Router) {
 
     this.totalScoreTitle = checkStorageService.getTotalScoreTitle();
     this.totalScoreText = checkStorageService.getTotalScoreText();
