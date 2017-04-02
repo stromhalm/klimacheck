@@ -36,12 +36,8 @@ export class AnswerYesComponent implements OnInit {
 
   topicId: number;
   questionId: number;
-  topic: {
-        menuName: string, fullName: string, icon: string, primaryColor: string, secondaryColor: string,
-        scores: Array<{minPoints: string, text: string}>,
-        questions: Array<{points: number, category: string, question: string, true: string, false: string}>
-    };
-  question: {points: number, category: string, question: string, true: string, false: string};
+  topic: Topic;
+  question: Question;
   formattedAnswer: string;
 
   constructor(
