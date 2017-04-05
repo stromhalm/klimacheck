@@ -228,8 +228,8 @@ export class ClimateCheck {
                 menuName: 'Veranstaltungen',
                 fullName: 'Veranstaltungen (z.B. Zeltlager, Seminare)',
                 icon: 'event',
-                primaryColor: '#F8E007',
-                secondaryColor: '#DCCF42',
+                primaryColor: '#117ba3',
+                secondaryColor: '#1bc0ff',
                 pattern: 'wov.png',
                 questions: [
                     {
