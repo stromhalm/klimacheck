@@ -1,8 +1,6 @@
-dist: "trusty"
-sudo: "required"
 language: "node_js"
-node_js: "7.4.0"
-os: "osx"
+node_js:
+  - "7"
 install:
  - npm install -g @angular/cli
  - npm install
@@ -13,4 +11,5 @@ after_success:
  - echo "klimacheck.janun.de" > dist/CNAME
  - npm install -g firebase-tools
  - firebase deploy --token "$FIREBASE_TOKEN"
+ - npm install -g angular-cli-ghpages
  - angular-cli-ghpages --repo=https://GH_TOKEN@github.com/stromhalm/klimacheck.git --name="Travis deployment" --email=noreply@example.org
