@@ -10,13 +10,15 @@ import { Router } from '@angular/router';
       transition(':leave', [
         animate('337ms cubic-bezier(0.4, 0, 0.2, 1)',
           style({
-            transform: 'translateY(100%)'
+            transform: 'translateY(50%)',
+            opacity: 0
           })
         )
       ]),
       transition(':enter', [
         style({
-          transform: 'translateY(100%)'
+          transform: 'translateY(50%)',
+          opacity: 0
         }),
         animate('337ms 337ms cubic-bezier(0.4, 0, 0.2, 1)')
       ])

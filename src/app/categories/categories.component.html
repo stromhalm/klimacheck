@@ -1,6 +1,10 @@
-<md-card md-ripple class="category" *ngFor="let topic of topics; let topicIndex = index" (click)="startTopic(topicIndex)" [ngStyle]="{backgroundColor: topic.secondaryColor}" [@cascadeUp]="topicIndex">
-  <md-icon class="topic-icon" [ngStyle]="{color: topic.primaryColor}">{{topic.icon}}</md-icon>
-  <div class="name-bar" [ngStyle]="{backgroundColor: topic.primaryColor}">
-    {{ topic.menuName }} <md-icon>play_arrow</md-icon>
-  </div>
-</md-card>
+<div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutWrap>
+  <md-card md-ripple class="category" *ngFor="let topic of topics; let topicIndex = index" (click)="startTopic(topicIndex)" [ngStyle]="{backgroundColor: topic.secondaryColor}" [@cascadeUp]="topicIndex">
+    <md-icon class="topic-icon" [ngStyle]="{color: topic.primaryColor}">{{topic.icon}}</md-icon>
+    <div class="name-bar" [ngStyle]="{backgroundColor: topic.primaryColor}">
+      {{ topic.menuName }} <md-icon>play_arrow</md-icon>
+    </div>
+  </md-card>
+
+  <router-outlet name="bottom-card"></router-outlet>
+</div>

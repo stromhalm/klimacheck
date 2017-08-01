@@ -1,4 +1,5 @@
-<div class="background-color" [ngStyle]="{backgroundColor: topic.secondaryColor, background: 'url(/assets/patterns/' + topic.pattern + ')'}" [@inAnimation]>
-  <app-back-button></app-back-button>
+<router-outlet name="top-bar"></router-outlet>
+
+<div class="background-color" [@inAnimation]>
   <router-outlet></router-outlet>
 </div>

@@ -41,6 +41,6 @@ export class InfoCardComponent implements OnInit {
   ngOnInit() { }
 
   startQuiz() {
-    this.router.navigate(['/thema/0']);
+    this.router.navigate(['/thema']);
   }
 }

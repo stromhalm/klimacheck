@@ -24,7 +24,7 @@ export class ScoreComponent implements OnInit {
 
   topicId: number;
   topic: Topic;
-  percentage: number = 0;
+  percentage = 0;
   scoreText: string;
   formattedAnswer: string;
 

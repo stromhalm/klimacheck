@@ -1,29 +1,41 @@
 :host {
     width: 100%;
+    display: block;
+    z-index: 20;
+    position: absolute;
 }
 
 md-toolbar {
-    box-shadow: rgba(0, 0, 0, 0.258824) 0px 2px 5px 0px;
     color: white;
-    background-color: #117ba3;
+    background-color: rgba(0,0,0,0);
+    font-family: 'Cabin', sans-serif;
     z-index: 1;
     height: 80px;
+    padding: 0 32px;
     
     .flex {
         flex: 1 1 auto;
     }
 
-    .janun-logo {
-        width: 50px;
-        margin-top: 10px;
-        margin-right: 10px;
-    }
-    
-    .app-title {
-        margin-top: 15px;
+    .logo-link {
+        color: white;
+        text-decoration: none;
+
+        .janun-logo {
+            width: 50px;
+            margin-top: 10px;
+            margin-right: 10px;
+            margin-left: -16px;
+        }
+        
+        .app-title {
+            
+            margin-top: 15px;
+        }
     }
 
     .menu-button {
         margin-top: 15px;
+        margin-right: -16px;
     }
 }

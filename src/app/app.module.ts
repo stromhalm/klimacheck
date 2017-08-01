@@ -2,11 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { Routes, RouterModule } from '@angular/router';
 import { LocalStorageModule } from 'angular-2-local-storage';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MarkdownToHtmlPipe } from 'markdown-to-html-pipe';
-
 import { CheckStorageService } from './check-storage.service';
 import { LayoutComponent } from './layout.component';
 import { QuestionComponent } from './question/question.component';
@@ -23,11 +23,22 @@ import { TotalScoreComponent } from './total-score/total-score.component';
 import { TotalScoreCardComponent } from './total-score-card/total-score-card.component';
 import { BackButtonComponent } from './back-button/back-button.component';
 import { TotalScoreEvaluationComponent } from './total-score-evaluation/total-score-evaluation.component';
+import { TopicSelectionComponent } from './topic-selection/topic-selection.component';
 
 const appRoutes: Routes = [
 
+  {
+    path: 'thema', component: TopicSelectionComponent,
+    children: [
+      { path: '', component: MenuBarComponent, outlet: 'top-bar'},
+      { path: '', component: CategoriesComponent, outlet: 'categories', children: [
+          { path: '', component: TotalScoreCardComponent, outlet: 'bottom-card'}
+      ]}
+    ]
+  },
   { path: 'thema/:topic', component: TopicComponent,
     children: [
+      { path: '', component: MenuBarComponent, outlet: 'top-bar'},
       { path: '', redirectTo: 'frage/0', pathMatch: 'full' },
       { path: 'frage/:question', component: QuestionComponent,
         children: [
@@ -42,15 +53,14 @@ const appRoutes: Routes = [
   },
   { path: 'auswertung', component: TotalScoreComponent,
     children: [
+      { path: '', component: MenuBarComponent, outlet: 'top-bar'},
       { path: '', component: TotalScoreEvaluationComponent }
     ]
   },
   { path: '', component: HomeComponent,
     children: [
       { path: '', component: MenuBarComponent, outlet: 'top-bar'},
-      { path: '', component: InfoCardComponent, outlet: 'info-card'},
-      { path: '', component: CategoriesComponent, outlet: 'categories'},
-      { path: '', component: TotalScoreCardComponent, outlet: 'bottom-card'}
+      { path: '', component: InfoCardComponent, outlet: 'info-card'}
     ]
   },
   { path: '**', redirectTo: '' }
@@ -72,7 +82,8 @@ const appRoutes: Routes = [
     TotalScoreComponent,
     TotalScoreCardComponent,
     BackButtonComponent,
-    TotalScoreEvaluationComponent
+    TotalScoreEvaluationComponent,
+    TopicSelectionComponent
   ],
   imports: [
     LocalStorageModule.withConfig({
@@ -83,7 +94,8 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    MaterialModule.forRoot()
+    MaterialModule,
+    FlexLayoutModule
   ],
   providers: [
     CheckStorageService,

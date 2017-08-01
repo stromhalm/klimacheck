@@ -1,5 +1,5 @@
 import { Component, OnInit, trigger, style, transition, animate, HostBinding } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-back-button',
@@ -20,11 +20,11 @@ export class BackButtonComponent implements OnInit {
 
   @HostBinding('@animation') get animation() { return; }
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {}
 
-  goToHome() {
-    this.router.navigate(['/']);
+  goUp() {
+    this.router.navigate(['../'], { relativeTo: this.route });
   }
 }

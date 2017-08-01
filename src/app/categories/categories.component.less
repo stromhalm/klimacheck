@@ -1,24 +1,17 @@
 :host {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
     min-height: 204px;
-
-    @media (max-width: 620px) {
-        display: block;
-    }
-
-    @media (min-width: 775px) {
-        .category {
-            min-width: 194px;
-        }
-    }
+    max-width: 440px;
 
     .category {
         cursor: pointer;
         padding: 0;
         padding-top: 20px;
         margin-top: 25px;
+        min-width: 194px;
+
+        // Shadow 10
+        box-shadow: 0px 6px 6px -3px rgba(0, 0, 0, .2), 0px 10px 14px 1px rgba(0, 0, 0, .14), 0px 4px 18px 3px rgba(0, 0, 0, .12) !important;
+
 
         .topic-icon {
             font-size: 100px;

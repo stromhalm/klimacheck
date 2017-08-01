@@ -1,7 +1,11 @@
-@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 md-icon {
     vertical-align: middle;
+}
+
+.mat-card {
+    font-family: 'Cabin', sans-serif;
 }
 
 .paragraph-icon {
@@ -16,8 +20,27 @@ md-toolbar-row {
     height: 64px !important;
 }
 
+.content {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    position: absolute;
+
+    router-outlet {
+        display: none;
+    }
+
+    @media (max-width: 620px) {
+        display: block;
+    }
+}
+
 .md-menu-click-catcher {
     z-index: 99;
+}
+
+.mat-menu-item {
+    font-family: 'Cabin', sans-serif;
 }
 
 .md-overlay-container {
@@ -38,5 +61,5 @@ md-toolbar-row {
 
 .janun-icon {
     width: 24px;
-    margin-right: 5px;
+    margin-right: 16px;
 }
