@@ -1,4 +1,5 @@
-import { Component, OnInit, trigger, style, transition, animate, HostBinding, state } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
+import { trigger, style, transition, animate, state } from '@angular/animations'
 import { ActivatedRoute, Router } from '@angular/router';
 import { ClimateCheck } from '../climate-check';
 import { CheckStorageService } from '../check-storage.service';
@@ -24,10 +25,14 @@ import { CheckStorageService } from '../check-storage.service';
     ]),
     trigger('centerButtons', [
       state('center', style({
-        transform: 'translateY(40px)'
+        transform: 'translateY(40px)',
+          opacity: 1
       })),
-      transition('void => center', animate('0s')),
-      transition('* => *', animate('337ms cubic-bezier(0.4, 0, 0.2, 1)')),
+      state('border', style({
+          opacity: 1
+      })),
+      transition('* => border', animate('337ms cubic-bezier(0.4, 0, 0.2, 1)')),
+      transition('* => center', animate('337ms cubic-bezier(0.4, 0, 0.2, 1)'))
     ])
   ]
 })
@@ -42,7 +47,9 @@ export class QuestionComponent implements OnInit {
   answer: boolean;
 
   get centerButtons() {
-    if (this.answer === undefined) return 'center';
+    if (this.answer === undefined) {
+      return 'center';
+    }
     return 'border';
   }
 
@@ -84,11 +91,11 @@ export class QuestionComponent implements OnInit {
   }
 
   clickPrevious() {
-    this.router.navigate(['animate', 'frage', this.questionId-1], { relativeTo: this.route.parent });
+    this.router.navigate(['animate', 'frage', this.questionId - 1], { relativeTo: this.route.parent });
   }
 
   clickNext() {
-    this.router.navigate(['animate', 'frage', this.questionId+1], { relativeTo: this.route.parent });
+    this.router.navigate(['animate', 'frage', this.questionId + 1], { relativeTo: this.route.parent });
   }
 
   clickScore() {

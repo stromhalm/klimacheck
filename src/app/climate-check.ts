@@ -332,7 +332,7 @@ export class ClimateCheck {
                 menuName: 'Verband',
                 fullName: 'Verankerung im Verband',
                 icon: 'group',
-                primaryColor: '#f0031a',
+                primaryColor: '#e93d2a',
                 secondaryColor: '#ff6161',
                 pattern: 'asanoha.png',
                 questions: [

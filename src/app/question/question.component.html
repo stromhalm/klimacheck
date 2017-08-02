@@ -4,7 +4,7 @@
       <md-card-content class="card-header" [ngStyle]="{backgroundColor: topic.primaryColor}">
         <md-card-subtitle>{{question.category}}</md-card-subtitle>
         <md-card-title>{{question.question}}</md-card-title>
-        <div class="answer-buttons" [@centerButtons]="centerButtons">
+        <div class="answer-buttons" [@centerButtons]="centerButtons" *ngIf="centerButtons">
             <button md-raised-button md-ripple class="button-yes" [ngClass]="{'active': answer === true, 'inactive': answer === false}" (click)="clickYes()"><md-icon>check</md-icon>Ja</button>
             <button md-raised-button md-ripple class="button-no" [ngClass]="{'active': answer === false, 'inactive': answer === true}" (click)="clickNo()"><md-icon>clear</md-icon>Nein</button>
         </div>
