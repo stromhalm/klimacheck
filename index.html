@@ -1,0 +1,122 @@
+Html Webpack Plugin:
+<pre>
+  Error: Parse Error: <base href=""http://klimacheck.janun.de"">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,400i,600,700" rel="stylesheet">
+    <style>
+      html, body, app-root, .preload-container {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+        background-color: rgb(185, 246, 202);
+        background: url('/assets/bg/climate-net-blur.jpg');
+        background-size: cover;
+        background-position-y: top;
+        font-family: 'Cabin', sans-serif !important;
+      }
+      /* Just the CSS preload animation */
+      .preload-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .preload-animation {
+        animation: preload-rotator 1.4s linear infinite;
+      }
+      @keyframes preload-rotator {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(270deg);
+        }
+      }
+      .preload-path {
+        stroke-dasharray: 187;
+        stroke-dashoffset: 0;
+        transform-origin: center;
+        animation: preload-dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+      }
+      @keyframes colors {
+        0% {
+          stroke: #4285F4;
+        }
+        25% {
+          stroke: #DE3E35;
+        }
+        50% {
+          stroke: #F7C223;
+        }
+        75% {
+          stroke: #1B9A59;
+        }
+        100% {
+          stroke: #4285F4;
+        }
+      }
+      @keyframes preload-dash {
+        0% {
+          stroke-dashoffset: 187;
+        }
+        50% {
+          stroke-dashoffset: 46.75;
+          transform: rotate(135deg);
+        }
+        100% {
+          stroke-dashoffset: 187;
+          transform: rotate(450deg);
+        }
+      }
+    </style>
+  <link href="styles.4000c09162731b94fee6.bundle.css" rel="stylesheet"/></head>
+  <body>
+    <app-root>
+      <div class="preload-container">
+        <svg class="preload-animation" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+          <circle class="preload-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+        </svg>
+      </div>
+    </app-root>
+  <script type="text/javascript" src="inline.e4b69d3990145382b493.bundle.js"></script><script type="text/javascript" src="vendor.fcb17142d  22ecfffcb5e.bundle.js"></script><script type="text/javascript" src="main.04f952c25d7a29ac37e6.bundle.js"></script></body>
+  </html>
+  
+  - htmlparser.js:235 new HTMLParser
+    [klimacheck]/[html-minifier]/src/htmlparser.js:235:13
+  
+  - htmlminifier.js:946 minify
+    [klimacheck]/[html-minifier]/src/htmlminifier.js:946:3
+  
+  - htmlminifier.js:1299 exports.minify
+    [klimacheck]/[html-minifier]/src/htmlminifier.js:1299:10
+  
+  - index.js:296 
+    [klimacheck]/[html-webpack-plugin]/index.js:296:16
+  
+  - util.js:16 tryCatcher
+    [klimacheck]/[bluebird]/js/release/util.js:16:23
+  
+  - promise.js:512 Promise._settlePromiseFromHandler
+    [klimacheck]/[bluebird]/js/release/promise.js:512:31
+  
+  - promise.js:569 Promise._settlePromise
+    [klimacheck]/[bluebird]/js/release/promise.js:569:18
+  
+  - promise.js:614 Promise._settlePromise0
+    [klimacheck]/[bluebird]/js/release/promise.js:614:10
+  
+  - promise.js:693 Promise._settlePromises
+    [klimacheck]/[bluebird]/js/release/promise.js:693:18
+  
+  - async.js:133 Async._drainQueue
+    [klimacheck]/[bluebird]/js/release/async.js:133:16
+  
+  - async.js:143 Async._drainQueues
+    [klimacheck]/[bluebird]/js/release/async.js:143:10
+  
+  - async.js:17 Immediate.Async.drainQueues
+    [klimacheck]/[bluebird]/js/release/async.js:17:14
+  
+</pre>
