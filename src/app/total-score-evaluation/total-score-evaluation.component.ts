@@ -80,7 +80,7 @@ export class TotalScoreEvaluationComponent implements OnInit {
   }
 
   getFormattedText(markdown: string): string {
-    return this.mdPipe.transform(this.totalScoreText)
+    return this.mdPipe.transform(markdown)
     .replace('  ', '</p><p>')
     .replace('<a ', '<a target="_blank" ');
   }

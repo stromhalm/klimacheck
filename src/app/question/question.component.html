@@ -14,8 +14,8 @@
       </div>
       <md-card-actions>
         <button md-button md-ripple class="navigation navigation-left" (click)="clickPrevious()" [disabled]="questionId == 0"><md-icon>chevron_left</md-icon>Zurück</button>
-        <button md-button md-ripple class="navigation navigation-right" (click)="clickNext()" *ngIf="topic.questions.length != questionId+1" [disabled]="answer == undefined">Weiter<md-icon>chevron_right</md-icon></button>
-        <button md-button md-ripple class="navigation navigation-right" (click)="clickScore()" *ngIf="topic.questions.length == questionId+1">Auswertung<md-icon>chevron_right</md-icon></button>
+        <button md-button md-ripple class="navigation navigation-right" (click)="clickNext()" *ngIf="topic.questions.length != questionId+1 || topicId != topics.length-1" [disabled]="answer == undefined">Weiter<md-icon>chevron_right</md-icon></button>
+        <button md-button md-ripple class="navigation navigation-right" (click)="clickScore()" *ngIf="topic.questions.length == questionId+1 && topicId == topics.length-1">Auswertung<md-icon>chevron_right</md-icon></button>
       </md-card-actions>
     </md-card>
   </div>

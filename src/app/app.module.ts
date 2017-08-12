@@ -48,6 +48,7 @@ const appRoutes: Routes = [
       },
       { path: 'auswertung', component: ScoreComponent },
       { path: 'animate/frage/:question', component: RedirectComponent },
+      { path: 'animate/thema/:topic', component: RedirectComponent },
       { path: 'animate/auswertung', component: RedirectComponent },
     ]
   },

@@ -28,6 +28,7 @@
     "@angular/router": "^4.3.2",
     "angular-2-local-storage": "^1.0.1",
     "core-js": "^2.4.1",
+    "firebase-functions": "^0.6.1",
     "markdown-to-html-pipe": "^1.2.1",
     "rxjs": "5.4.2",
     "ts-helpers": "^1.1.2",

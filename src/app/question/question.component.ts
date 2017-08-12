@@ -45,6 +45,7 @@ export class QuestionComponent implements OnInit {
   topic: Topic;
   question: Question;
   answer: boolean;
+  topics: Topic[];
 
   get centerButtons() {
     if (this.answer === undefined) {
@@ -63,6 +64,7 @@ export class QuestionComponent implements OnInit {
     this.topicId = parseInt(this.route.parent.snapshot.params['topic'], 10);
     this.questionId = parseInt(this.route.snapshot.params['question'], 10);
 
+    this.topics = ClimateCheck.topics;
     this.topic = ClimateCheck.topics[this.topicId];
     this.question = ClimateCheck.topics[this.topicId].questions[this.questionId];
 
@@ -95,7 +97,12 @@ export class QuestionComponent implements OnInit {
   }
 
   clickNext() {
-    this.router.navigate(['animate', 'frage', this.questionId + 1], { relativeTo: this.route.parent });
+    if (this.questionId < this.topic.questions.length - 1) {
+      this.router.navigate(['animate', 'frage', this.questionId + 1], { relativeTo: this.route.parent });
+    } else {
+      // Next topic
+      this.router.navigate(['animate', 'thema', this.topicId + 1], { relativeTo: this.route.parent });
+    }
   }
 
   clickScore() {

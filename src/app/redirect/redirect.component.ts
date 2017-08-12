@@ -10,10 +10,12 @@ export class RedirectComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
-    if (this.route.snapshot.params['question']) {
+    if (this.route.snapshot.params['topic']) {
+      this.router.navigate(['thema', this.route.snapshot.params['topic']], {relativeTo: this.route.root });
+    } else if (this.route.snapshot.params['question']) {
       this.router.navigate(['frage', this.route.snapshot.params['question']], {relativeTo: this.route.parent });
     } else {
-      this.router.navigate(['auswertung'], { relativeTo: this.route.parent });
+      this.router.navigate(['auswertung'], { relativeTo: this.route.root });
     }
   }
 }

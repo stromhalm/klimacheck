@@ -26,8 +26,8 @@ export class ClimateCheck {
                 menuName: 'Energie & Gebäude',
                 fullName: 'Energie in Geschäfts-/ Bildungsstätten',
                 icon: 'lightbulb_outline',
-                primaryColor: '#d9ae2f',
-                secondaryColor: '#f2e168',
+                primaryColor: '#d0b539',
+                secondaryColor: '#f3e872',
                 pattern: 'ravenna.png',
                 questions: [
                     {
@@ -228,7 +228,7 @@ export class ClimateCheck {
                 menuName: 'Veranstaltungen',
                 fullName: 'Veranstaltungen (z.B. Zeltlager, Seminare)',
                 icon: 'event',
-                primaryColor: '#0f54af',
+                primaryColor: '#246dcc',
                 secondaryColor: '#5196f0',
                 pattern: 'wov.png',
                 questions: [
