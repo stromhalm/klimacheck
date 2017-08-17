@@ -16,20 +16,29 @@
       </div>
     </div>
   </md-card-content>
-  <md-card-content class="category-section" *ngFor="let topic of topics; let i = index" [@growUp]="i">
+  <div class="category-section" *ngFor="let topic of topics; let i = index">
     <md-card-subtitle>{{ topic.fullName }}</md-card-subtitle>
     <div class="answer-score" [@slideUp]="percentage">
-      <div class="paragraph-icon">
-        <button md-mini-fab class="button-info" disabled><md-icon>{{ topic.icon }}</md-icon></button>
-      </div>
-      <div *ngIf="checkStorageService.isTopicComplete(i)" class="score-text" [innerHTML]="getFormattedText(checkStorageService.getScoreText(i))">
-      </div>
-      <div *ngIf="!checkStorageService.isTopicComplete(i)" class="score-text">
-        <i>Diese Kategorie ist noch nicht vollständig bearbeitet.</i>
-        <md-card-actions>
-          <button md-button class="answer-category" (click)="goToCategory(i)">Kategorie bearbeiten<md-icon>chevron_right</md-icon></button>
-        </md-card-actions>
-      </div>
+      <md-card-content>
+        <div class="paragraph-icon">
+          <button md-mini-fab class="button-info" disabled><md-icon>{{ topic.icon }}</md-icon></button>
+        </div>
+        <div *ngIf="checkStorageService.isTopicComplete(i)" class="score-text" [innerHTML]="getFormattedText(checkStorageService.getScoreText(i))">
+        </div>
+        <div *ngIf="!checkStorageService.isTopicComplete(i)" class="score-text">
+          <i>Diese Kategorie ist noch nicht vollständig bearbeitet.</i>
+          <md-card-actions>
+            <button md-button class="answer-category" (click)="goToCategory(i)">Kategorie bearbeiten<md-icon>chevron_right</md-icon></button>
+          </md-card-actions>
+        </div>
+      </md-card-content>
+      <ng-container *ngFor="let question of topic.questions; let questionId = index">
+        <md-card-content
+          *ngIf="getAnswerText(i, questionId)"
+          [ngClass]="{answerYes: getAnswer(i, questionId), answerNo: !getAnswer(i, questionId)}"
+          [innerHTML]="getFormattedText(getAnswerText(i, questionId))" class="question-result">
+        </md-card-content>
+      </ng-container>
     </div>
-  </md-card-content>
+  </div>
 </md-card>

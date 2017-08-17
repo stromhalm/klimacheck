@@ -30,7 +30,7 @@ export class CheckStorageService {
       if (true) {
         try {
           this.getAnswer(topicId, parseInt(questionId, 10));
-        } catch(e) {
+        } catch (e) {
           return false;
         }
       }

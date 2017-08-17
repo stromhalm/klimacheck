@@ -89,6 +89,18 @@ export class TotalScoreEvaluationComponent implements OnInit {
     this.router.navigate(['/thema', categoryId]);
   }
 
+  getAnswer(categoryId: number, questionId: number): boolean {
+    return this.checkStorageService.getAnswer(categoryId, questionId);
+  }
+
+  getAnswerText(categoryId: number, questionId: number): string {
+    if (this.getAnswer(categoryId, questionId)) {
+      return this.topics[categoryId].questions[questionId]['true'];
+    } else {
+      return this.topics[categoryId].questions[questionId]['false'];
+    }
+  }
+
   ngOnInit() {
     setTimeout(() => this.totalPercentage = this.checkStorageService.getTotalPercentage(), 674);
   }
