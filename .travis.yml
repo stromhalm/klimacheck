@@ -7,9 +7,9 @@ install:
 script:
  - echo "0"
 after_success:
- - ng build --prod
- - echo "klimacheck.janun.de" > dist/CNAME
- - npm install -g firebase-tools
- - firebase deploy --token "$FIREBASE_TOKEN"
- - npm install -g angular-cli-ghpages
- - angular-cli-ghpages --repo=https://GH_TOKEN@github.com/stromhalm/klimacheck.git --name="Travis deployment" --email=noreply@example.org
+# - ng build --prod
+# - echo "klimacheck.janun.de" > dist/CNAME
+# - npm install -g firebase-tools
+# - firebase deploy --token "$FIREBASE_TOKEN"
+# - npm install -g angular-cli-ghpages
+# - angular-cli-ghpages --repo=https://GH_TOKEN@github.com/stromhalm/klimacheck.git --name="Travis deployment" --email=noreply@example.org
