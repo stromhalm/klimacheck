@@ -34,7 +34,7 @@
       </md-card-content>
       <ng-container *ngFor="let question of topic.questions; let questionId = index">
         <md-card-content
-          *ngIf="getAnswerText(i, questionId)"
+          *ngIf="checkStorageService.isTopicComplete(i) && getAnswerText(i, questionId)"
           [ngClass]="{answerYes: getAnswer(i, questionId), answerNo: !getAnswer(i, questionId)}"
           [innerHTML]="getFormattedText(getAnswerText(i, questionId))" class="question-result">
         </md-card-content>
