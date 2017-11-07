@@ -1,10 +1,10 @@
 <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutWrap>
-  <md-card md-ripple class="category" *ngFor="let topic of topics; let topicIndex = index" (click)="startTopic(topicIndex)" [ngStyle]="{backgroundColor: topic.secondaryColor}" [@cascadeUp]="topicIndex">
-    <md-icon class="topic-icon" [ngStyle]="{color: topic.primaryColor}">{{topic.icon}}</md-icon>
+  <mat-card mat-ripple class="category mat-elevation-z10" *ngFor="let topic of topics; let topicIndex = index" (click)="startTopic(topicIndex)" [ngStyle]="{backgroundColor: topic.secondaryColor}" [@cascadeUp]="topicIndex">
+    <mat-icon class="topic-icon" [ngStyle]="{color: topic.primaryColor}">{{topic.icon}}</mat-icon>
     <div class="name-bar" [ngStyle]="{backgroundColor: topic.primaryColor}">
-      {{ topic.menuName }} <md-icon>play_arrow</md-icon>
+      {{ topic.menuName }} <mat-icon>play_arrow</mat-icon>
     </div>
-  </md-card>
+  </mat-card>
 
   <router-outlet name="bottom-card"></router-outlet>
 </div>

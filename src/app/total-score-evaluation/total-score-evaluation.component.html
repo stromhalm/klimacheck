@@ -1,13 +1,13 @@
-<md-card>
-  <md-card-content class="card-header">
-    <md-card-subtitle>Gesamtauswertung</md-card-subtitle>
-    <md-card-title>{{ totalScoreTitle }}</md-card-title>
+<mat-card class="mat-elevation-z10">
+  <mat-card-content class="card-header">
+    <mat-card-subtitle>Gesamtauswertung</mat-card-subtitle>
+    <mat-card-title>{{ totalScoreTitle }}</mat-card-title>
     <div class="percentage" [@growUp]="totalPercentage">
       {{ totalPercentage }} %
     </div>
-    <md-progress-bar mode="determinate" [value]="totalPercentage"></md-progress-bar>
-  </md-card-content>
-  <md-card-content>
+    <mat-progress-bar mode="determinate" [value]="totalPercentage"></mat-progress-bar>
+  </mat-card-content>
+  <mat-card-content>
     <div class="answer-block">
       <div *ngIf="checkStorageService.allTopicsComplete()" class="total-score" [innerHTML]="formattedScore">
       </div>
@@ -15,30 +15,30 @@
         <i>Alle Kategorien bearbeiten, um eine Gesamtauswertung zu erhalten</i>
       </div>
     </div>
-  </md-card-content>
+  </mat-card-content>
   <div class="category-section" *ngFor="let topic of topics; let i = index">
-    <md-card-subtitle>{{ topic.fullName }}</md-card-subtitle>
+    <mat-card-subtitle>{{ topic.fullName }}</mat-card-subtitle>
     <div class="answer-score" [@slideUp]="percentage">
-      <md-card-content>
+      <mat-card-content>
         <div class="paragraph-icon">
-          <button md-mini-fab class="button-info" disabled><md-icon>{{ topic.icon }}</md-icon></button>
+          <button mat-mini-fab class="button-info" disabled><mat-icon>{{ topic.icon }}</mat-icon></button>
         </div>
         <div *ngIf="checkStorageService.isTopicComplete(i)" class="score-text" [innerHTML]="getFormattedText(checkStorageService.getScoreText(i))">
         </div>
         <div *ngIf="!checkStorageService.isTopicComplete(i)" class="score-text">
           <i>Diese Kategorie ist noch nicht vollständig bearbeitet.</i>
-          <md-card-actions>
-            <button md-button class="answer-category" (click)="goToCategory(i)">Kategorie bearbeiten<md-icon>chevron_right</md-icon></button>
-          </md-card-actions>
+          <mat-card-actions>
+            <button mat-button class="answer-category" (click)="goToCategory(i)">Kategorie bearbeiten<mat-icon>chevron_right</mat-icon></button>
+          </mat-card-actions>
         </div>
-      </md-card-content>
+      </mat-card-content>
       <ng-container *ngFor="let question of topic.questions; let questionId = index">
-        <md-card-content
+        <mat-card-content
           *ngIf="checkStorageService.isTopicComplete(i) && getAnswerText(i, questionId)"
           [ngClass]="{answerYes: getAnswer(i, questionId), answerNo: !getAnswer(i, questionId)}"
           [innerHTML]="getFormattedText(getAnswerText(i, questionId))" class="question-result">
-        </md-card-content>
+        </mat-card-content>
       </ng-container>
     </div>
   </div>
-</md-card>
+</mat-card>

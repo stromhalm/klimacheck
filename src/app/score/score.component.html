@@ -1,26 +1,26 @@
 <div class="vertical-align">
   <div class="horizontal-align">
-    <md-card>
-      <md-card-content class="card-header" [ngStyle]="{backgroundColor: topic.primaryColor}">
-        <md-card-subtitle>Auswertung</md-card-subtitle>
-        <md-card-title>{{topic.fullName}}</md-card-title>
+    <mat-card>
+      <mat-card-content class="card-header" [ngStyle]="{backgroundColor: topic.primaryColor}">
+        <mat-card-subtitle>Auswertung</mat-card-subtitle>
+        <mat-card-title>{{topic.fullName}}</mat-card-title>
         <div class="percentage" [@slideUp]="percentage">
           {{percentage}} %
         </div>
-        <md-progress-bar mode="determinate" value="{{percentage}}"></md-progress-bar>
-      </md-card-content>
+        <mat-progress-bar mode="determinate" value="{{percentage}}"></mat-progress-bar>
+      </mat-card-content>
       <div class="answer-block" [@slideUp]="percentage">
         <div class="answer-score">
           <div class="paragraph-icon">
-            <button md-mini-fab class="button-info" disabled><md-icon>perm_scan_wifi</md-icon></button>
+            <button mat-mini-fab class="button-info" disabled><mat-icon>perm_scan_wifi</mat-icon></button>
           </div>
           <div class="score-text" [innerHTML]="formattedAnswer"></div>
         </div>
       </div>
-      <md-card-actions>
-        <button md-button class="navigation navigation-left" [routerLink]="['/thema', topicId, 'frage', topic.questions.length-1]"><md-icon>chevron_left</md-icon>Zurück</button>
-        <button md-button class="navigation navigation-right" (click)="goToHome()">Thema abschließen</button>
-      </md-card-actions>
-    </md-card>
+      <mat-card-actions>
+        <button mat-button class="navigation navigation-left" [routerLink]="['/thema', topicId, 'frage', topic.questions.length-1]"><mat-icon>chevron_left</mat-icon>Zurück</button>
+        <button mat-button class="navigation navigation-right" (click)="goToHome()">Thema abschließen</button>
+      </mat-card-actions>
+    </mat-card>
   </div>
 </div>

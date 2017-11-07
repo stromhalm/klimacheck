@@ -1,5 +1,6 @@
 import { Component, OnInit, trigger, style, transition, animate, HostBinding } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatCardModule, MatCardTitle, MatCardSubtitle } from '@angular/material'
 
 @Component({
   selector: 'app-info-card',

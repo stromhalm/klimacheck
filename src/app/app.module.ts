@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MaterialModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { Routes, RouterModule } from '@angular/router';
 import { LocalStorageModule } from 'angular-2-local-storage';
@@ -24,6 +23,7 @@ import { TotalScoreCardComponent } from './total-score-card/total-score-card.com
 import { BackButtonComponent } from './back-button/back-button.component';
 import { TotalScoreEvaluationComponent } from './total-score-evaluation/total-score-evaluation.component';
 import { TopicSelectionComponent } from './topic-selection/topic-selection.component';
+import { MatCardModule, MatIconModule, MatProgressBarModule, MatMenuModule, MatToolbarModule, MatButtonModule } from '@angular/material';
 
 const appRoutes: Routes = [
 
@@ -95,8 +95,9 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatCardModule, MatIconModule, MatProgressBarModule,
+    MatMenuModule, MatToolbarModule, MatButtonModule
   ],
   providers: [
     CheckStorageService,
