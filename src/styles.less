@@ -1,6 +1,6 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
-md-icon {
+mat-icon {
     vertical-align: middle;
 }
 
@@ -16,7 +16,7 @@ a {
     color: rgb(17, 123, 163);
 }
 
-md-toolbar-row {
+mat-toolbar-row {
     height: 64px !important;
 }
 
@@ -35,7 +35,7 @@ md-toolbar-row {
     }
 }
 
-.md-menu-click-catcher {
+.mat-menu-click-catcher {
     z-index: 99;
 }
 
@@ -43,23 +43,27 @@ md-toolbar-row {
     font-family: 'Cabin', sans-serif;
 }
 
-.md-overlay-container {
+.mat-overlay-container {
     z-index: 199;
 
     .menu-right {
         transform: translateX(-155px);
 
-        md-icon {
+        mat-icon {
             margin-right: 3px;
         }
     }
 }
 
-.md-progress-bar-fill {
+.mat-progress-bar-fill {
     transition: transform 674ms cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 .janun-icon {
     width: 24px;
     margin-right: 16px;
+}
+
+app-question:nth-of-type(2) {
+    position: relative !important;
 }
