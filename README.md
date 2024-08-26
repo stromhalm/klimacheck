@@ -1,6 +1,6 @@
 # Klima-Check
 
-This is an early prototype for the __Klima Check__ by [Janun e.V.](http://janun.de).
+This is the code repository for the __Klima Check__ by [Janun e.V.](http://janun.de).
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
